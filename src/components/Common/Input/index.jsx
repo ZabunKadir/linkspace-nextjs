@@ -4,11 +4,15 @@ import React from "react";
 import { cn } from "@/utils/cn";
 
 export default function Input({
+  name,
+  id,
   label,
   type = "text",
   placeholder = "",
   value,
   onChange,
+  onFocus,
+  onBlur,
   error,
   disabled = false,
   required = false,
@@ -23,10 +27,14 @@ export default function Input({
         </label>
       )}
       <input
+        id={id}
+        name={name}
         type={type}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        onBlur={onBlur}
+        onFocus={onFocus}
         disabled={disabled}
         required={required}
         className={cn(

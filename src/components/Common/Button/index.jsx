@@ -10,8 +10,9 @@ export default function Button({
   size = "md",
   disabled = false,
   loading = false,
-  fuulWidth = false,
+  fullWidth = false,
   onClick,
+  className = "",
 }) {
   const baseStyle =
     "inline-flex items-center justify-center rounded-xl font-semibold transition-all focus:outline-none";
@@ -35,8 +36,9 @@ export default function Button({
           baseStyle,
           varitantStyle[varitant],
           sizeStyle[size],
-          fuulWidth && "w-full",
-          (disabled || loading) && "opacity-50 cursor-not-allowed"
+          fullWidth && "w-full",
+          (disabled || loading) && "opacity-50 cursor-not-allowed",
+          className
         )}
       >
         {loading && (
