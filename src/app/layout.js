@@ -3,6 +3,7 @@ import "./globals.css";
 
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
+import Providers from "@/components/Layout/Provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,11 +23,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <Header />
-        <main className="min-h-screen pt-16">{children}</main>
-        <Footer />
-      </body>
+      <Providers>
+        <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+          <Header />
+          <main className="min-h-screen pt-16">{children}</main>
+          <Footer />
+        </body>
+      </Providers>
     </html>
   );
 }
