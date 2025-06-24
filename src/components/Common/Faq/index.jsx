@@ -8,9 +8,23 @@ import {
 } from "@/components/Common/Acardion";
 import { motion } from "framer-motion";
 
-const fadeIn = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.5 } },
+// Sıralı animasyon için container ve item tanımları
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut" },
+  },
 };
 
 const CustomFaq = ({ items }) => {
@@ -26,15 +40,17 @@ const CustomFaq = ({ items }) => {
           </div>
         </h2>
       </div>
-      <div className="w-full max-w-2xl sm:max-w-3xl md:max-w-4xl mt-8 px-5">
+
+      <motion.div
+        className="w-full max-w-2xl sm:max-w-3xl md:max-w-4xl mt-8 px-5"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <Accordion type="multiple" className="w-full space-y-4">
           {items.map((item, index) => (
-            <motion.div
-              key={index}
-              variants={fadeIn}
-              initial="hidden"
-              animate="visible"
-            >
+            <motion.div key={index} variants={itemVariants}>
               <AccordionItem
                 value={`item-${index}`}
                 className="border rounded-md shadow-sm p-1 px-4"
@@ -49,7 +65,7 @@ const CustomFaq = ({ items }) => {
             </motion.div>
           ))}
         </Accordion>
-      </div>
+      </motion.div>
     </div>
   );
 };

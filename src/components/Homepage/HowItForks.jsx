@@ -81,7 +81,7 @@ const HowItWorks = () => {
           ))}
 
           <motion.div variants={fadeIn}>
-            <Button children="Contact Us" size="lg" href="/contact" />
+            <Button children="Contact Us" size="md" href="/contact" />
           </motion.div>
         </div>
 

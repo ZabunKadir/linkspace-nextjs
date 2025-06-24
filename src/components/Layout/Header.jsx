@@ -21,30 +21,36 @@ export default function Header() {
             href="/"
             className="text-md font-medium text-gray-700 hover:text-primary"
           >
-            Anasayfa
+            Home
           </Link>
           <Link
             href="/about"
             className="text-md font-medium text-gray-700 hover:text-primary"
           >
-            Hakkımızda
+            About
+          </Link>
+          <Link
+            href="/blog"
+            className="text-md font-medium text-gray-700 hover:text-primary"
+          >
+            Blog
           </Link>
           <Link
             href="/contact"
             className="text-md font-medium text-gray-700 hover:text-primary"
           >
-            İletişim
+            Contact
           </Link>
         </nav>
 
         <div className="hidden md:flex gap-2">
           <Link href="/login">
             <Button variant="outline" className="text-md">
-              Giriş Yap
+              Login
             </Button>
           </Link>
           <Link href="/register">
-            <Button className="text-md">Kayıt Ol</Button>
+            <Button className="text-md">Sign Up</Button>
           </Link>
         </div>
 
@@ -85,33 +91,33 @@ export default function Header() {
                 onClick={toggleMenu}
                 className="text-md text-gray-700 hover:text-primary"
               >
-                Anasayfa
+                Home
               </Link>
               <Link
                 href="/about"
                 onClick={toggleMenu}
                 className="text-md text-gray-700 hover:text-primary"
               >
-                Hakkımızda
+                About
               </Link>
               <Link
                 href="/contact"
                 onClick={toggleMenu}
                 className="text-md text-gray-700 hover:text-primary"
               >
-                İletişim
+                Contact
               </Link>
 
               <hr className="my-2" />
 
-              <div className="flex  flex-row justify-between gap-2">
+              <div className="flex flex-row justify-between gap-2">
                 <Link href="/login" onClick={toggleMenu}>
                   <Button variant="outline" className="w-full">
-                    Giriş Yap
+                    Login
                   </Button>
                 </Link>
                 <Link href="/register" onClick={toggleMenu}>
-                  <Button className="w-full">Kayıt Ol</Button>
+                  <Button className="w-full">Sign Up</Button>
                 </Link>
               </div>
             </motion.div>
