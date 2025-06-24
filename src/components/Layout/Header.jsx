@@ -12,12 +12,10 @@ export default function Header() {
   return (
     <header className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Sol: Logo */}
         <Link href="/" className="text-xl font-bold text-primary">
           LinkSpace
         </Link>
 
-        {/* Orta Menü (md ve üzeri) */}
         <nav className="hidden md:flex gap-6">
           <Link
             href="/"
@@ -39,7 +37,6 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Sağ Butonlar (md ve üzeri) */}
         <div className="hidden md:flex gap-2">
           <Link href="/login">
             <Button variant="outline" className="text-md">
@@ -51,7 +48,6 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Mobil Menü Açma */}
         <button
           onClick={toggleMenu}
           className="md:hidden text-2xl text-gray-700 "
@@ -60,7 +56,6 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobil Menü Motion Overlay */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
