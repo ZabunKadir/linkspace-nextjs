@@ -2,6 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 import Button from "../Common/Button";
+import Title from "../Common/Title";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 50 },
@@ -39,9 +40,8 @@ const HeroSection = () => {
           <p className="hidden lg:flex font-medium text-eerieBlack uppercase text-3xl">
             Hemen Başla
           </p>
-          <h2 className="font-bold text-eerieBlack text-4xl md:text-7xl">
-            LinkSpace ile bağlantılarını yönet
-          </h2>
+     
+          <Title level={3} children=" LinkSpace ile bağlantılarını yönet"  size="text-4xl md:text-7xl" weight="bold" color="text-black" className="uppercase"/> 
           <p className="text-purpleBrown text-sm sm:text-base leading-6 sm:leading-7 md:leading-8">
             Bağlantılarını tek bir yerde topla, paylaş ve analiz et. Modern ve
             güvenli arayüzle işini kolaylaştır.

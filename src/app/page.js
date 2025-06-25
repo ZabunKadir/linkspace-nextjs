@@ -1,16 +1,18 @@
 "use client";
 
-import FaqHomePage from "@/components/Homepage/Faq";
-import Features from "@/components/Homepage/Features";
 import HeroSection from "@/components/Homepage/HeroSection";
-import HowItWorks from "@/components/Homepage/HowItForks";
+import HowItWorks  from "@/components/Homepage/HowItForks";
+import Features    from "@/components/Homepage/Features";
+import FeaturedBlogs from "@/components/Homepage/FeaturedBlogs";
+import FaqHomePage from "@/components/Homepage/Faq";
 
-export default function HomePage({}) {
+export default function HomePage() {
   return (
     <div>
       <HeroSection />
       <HowItWorks />
       <Features />
+      <FeaturedBlogs count={3} />
       <FaqHomePage />
     </div>
   );

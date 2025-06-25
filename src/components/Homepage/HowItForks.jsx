@@ -2,6 +2,7 @@
 import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 import Button from "../Common/Button";
+import Title from "../Common/Title";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 50 },
@@ -30,12 +31,17 @@ const HowItWorks = () => {
         animate={isInView ? "visible" : "hidden"}
         variants={staggerContainer}
       >
-        <motion.h2
-          className="font-bold text-eerieBlack text-4xl md:text-6xl font-calsans"
-          variants={fadeIn}
-        >
-          How It Works
-        </motion.h2>
+        <motion.div variants={fadeIn}>
+          <Title
+            level={3}
+            children="How It Works"
+            align="center"
+            size="text-4xl md:text-7xl"
+            weight="bold"
+            color="text-black"
+            className="uppercase"
+          />
+        </motion.div>
       </motion.div>
 
       <motion.div
