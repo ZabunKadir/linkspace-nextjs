@@ -7,13 +7,8 @@ import { useRegisterMutation } from "@/store/auth/service";
 import { useFormik } from "formik";
 import { registerValidationSchema } from "./registerSchema";
 import { FaFacebookF, FaTwitter, FaGithub, FaGoogle } from "react-icons/fa";
-import dynamic from "next/dynamic";
-const FlagSelectBox = dynamic(
-  () => import("@/components/Common/FlagSelectBox"),
-  {
-    ssr: false,
-  }
-);
+import FlagSelectBox from "@/components/Common/FlagSelectBox";
+
 const RegisterPage = () => {
   const [register, { isLoading: registerLoading }] = useRegisterMutation();
 
@@ -30,9 +25,12 @@ const RegisterPage = () => {
     },
     validationSchema: registerValidationSchema,
     onSubmit: (values) => {
-      delete values.confirmPassword;
-      register(values).then((res) => {
-        if (!res?.data?.error) {
+      const data = { ...values };
+      delete data.confirmPassword;
+      register(data).then((res) => {
+        console.log("res", res);
+
+        if (!res?.error) {
           formik.resetForm();
           Swal.fire({
             icon: "success",
@@ -44,7 +42,9 @@ const RegisterPage = () => {
           Swal.fire({
             icon: "error",
             title: "Registration Failed",
-            text: res?.data?.error || "An error occurred during registration.",
+            text:
+              res?.error?.data?.message ||
+              "An error occurred during registration.",
             confirmButtonColor: "#d33",
           });
         }
@@ -82,39 +82,6 @@ const RegisterPage = () => {
       label: "Confirm Password",
       placeholder: "Repeat password",
       type: "password",
-    },
-  ];
-
-  const countryOptions = [
-    {
-      value: "90",
-      label: "Turkey",
-      code: "TR",
-      flag: "https://flagcdn.com/w40/tr.png",
-    },
-    {
-      value: "1",
-      label: "United States",
-      code: "US",
-      flag: "https://flagcdn.com/w40/us.png",
-    },
-    {
-      value: "44",
-      label: "United Kingdom",
-      code: "GB",
-      flag: "https://flagcdn.com/w40/gb.png",
-    },
-    {
-      value: "49",
-      label: "Germany",
-      code: "DE",
-      flag: "https://flagcdn.com/w40/de.png",
-    },
-    {
-      value: "33",
-      label: "France",
-      code: "FR",
-      flag: "https://flagcdn.com/w40/fr.png",
     },
   ];
 
@@ -157,7 +124,7 @@ const RegisterPage = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               disabled={registerLoading}
-              className="text-sm px-3 py-2" 
+              className="text-sm px-3 py-2"
               error={
                 formik.touched[field.name] && formik.errors[field.name]
                   ? formik.errors[field.name]
@@ -171,7 +138,6 @@ const RegisterPage = () => {
               <FlagSelectBox
                 value={formik.values.countryCode}
                 onChange={(val) => formik.setFieldValue("countryCode", val)}
-                options={countryOptions}
                 error={
                   formik.touched.countryCode && formik.errors.countryCode
                     ? formik.errors.countryCode
@@ -200,15 +166,15 @@ const RegisterPage = () => {
           </div>
 
           {/* Terms checkbox */}
-          <div className="flex items-start space-x-2 px-4 text-xs font-bold">
+          <div className="flex items-center space-x-2 px-4 text-xs font-bold">
             <input
               type="checkbox"
               id="terms"
               required
-              className="form-checkbox mt-1"
+              className="form-checkbox"
             />
-            <label htmlFor="terms mt-1 ">
-               <span className="text-gray-500 ">I agree to</span>{" "}
+            <label htmlFor="terms">
+              <span className="text-gray-500 ">I agree to</span>{" "}
               <a href="/privacy" className="text-blue-500 underline ">
                 privacy policy & terms
               </a>
