@@ -6,6 +6,7 @@ import { cn } from "@/utils/cn";
 export default function Title({
   children,
   level = 1,
+  size = "text-2xl md:text-3xl",
   align = "left",
   weight = "bold",
   color = "text-gray-800",
@@ -17,13 +18,14 @@ export default function Title({
     <Tag
       className={cn(
         "tracking-tight",
+        size,                         
         color,
-        weight === "bold" && "font-bold",
+        weight === "bold"     && "font-bold",
         weight === "semibold" && "font-semibold",
-        weight === "medium" && "font-medium",
-        align === "center" && "text-center",
-        align === "right" && "text-right",
-        align === "left" && "text-left",
+        weight === "medium"   && "font-medium",
+        align === "center"    && "text-center",
+        align === "right"     && "text-right",
+        align === "left"      && "text-left",
         className
       )}
     >

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
-import { cn } from "@/utils/cn"; // Class birleştirme utility'si
+import { cn } from "@/utils/cn";
 
 export default function Rating({
   max = 5,
