@@ -27,6 +27,7 @@ const RegisterPage = () => {
       confirmPassword: "",
       countryCode: "90",
       phone: "",
+      terms: false,
     },
     validationSchema: registerValidationSchema,
     onSubmit: (values) => {
@@ -157,7 +158,7 @@ const RegisterPage = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               disabled={registerLoading}
-              className="text-sm px-3 py-2" 
+              className="text-sm px-3 py-2"
               error={
                 formik.touched[field.name] && formik.errors[field.name]
                   ? formik.errors[field.name]
@@ -166,7 +167,7 @@ const RegisterPage = () => {
             />
           ))}
 
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-start">
             <div className="w-28">
               <FlagSelectBox
                 value={formik.values.countryCode}
@@ -199,20 +200,32 @@ const RegisterPage = () => {
             </div>
           </div>
 
-          {/* Terms checkbox */}
-          <div className="flex items-start space-x-2 px-4 text-xs font-bold">
-            <input
-              type="checkbox"
-              id="terms"
-              required
-              className="form-checkbox mt-1"
-            />
-            <label htmlFor="terms mt-1 ">
-               <span className="text-gray-500 ">I agree to</span>{" "}
-              <a href="/privacy" className="text-blue-500 underline ">
-                privacy policy & terms
-              </a>
-            </label>
+          {/* 3. Checkbox alanı (form içinde) */}
+          <div className="flex flex-col px-4">
+            <div className="flex items-center space-x-2">
+              <input
+                name="terms" // bağlama için name ekledik
+                id="terms"
+                type="checkbox"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                checked={formik.values.terms}
+                className="form-checkbox mt-1"
+              />
+              <label
+                htmlFor="terms"
+                className="text-xs font-bold text-gray-500"
+              >
+                I agree to{" "}
+                <a href="/privacy" className="text-blue-500 underline">
+                  privacy policy & terms
+                </a>
+              </label>
+            </div>
+            {/* 4. Manuel hata mesajı */}
+            {formik.touched.terms && formik.errors.terms && (
+              <p className="text-red-600 text-xs mt-1">{formik.errors.terms}</p>
+            )}
           </div>
 
           <Button
@@ -231,7 +244,7 @@ const RegisterPage = () => {
               Sign in instead
             </a>
           </div>
-          <div className="flex items-center justify-center space-x-3 pt-3 text-gray-500">
+          {/* <div className="flex items-center justify-center space-x-3 pt-3 text-gray-500">
             <a
               href="#"
               className="p-2 rounded-full hover:bg-gray-100 transition"
@@ -256,7 +269,7 @@ const RegisterPage = () => {
             >
               <FaGoogle className="w-5 h-5" />
             </a>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>
