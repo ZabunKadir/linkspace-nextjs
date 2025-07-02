@@ -7,13 +7,8 @@ import { useRegisterMutation } from "@/store/auth/service";
 import { useFormik } from "formik";
 import { registerValidationSchema } from "./registerSchema";
 import { FaFacebookF, FaTwitter, FaGithub, FaGoogle } from "react-icons/fa";
-import dynamic from "next/dynamic";
-const FlagSelectBox = dynamic(
-  () => import("@/components/Common/FlagSelectBox"),
-  {
-    ssr: false,
-  }
-);
+import FlagSelectBox from "@/components/Common/FlagSelectBox";
+
 const RegisterPage = () => {
   const [register, { isLoading: registerLoading }] = useRegisterMutation();
 
@@ -31,9 +26,12 @@ const RegisterPage = () => {
     },
     validationSchema: registerValidationSchema,
     onSubmit: (values) => {
-      delete values.confirmPassword;
-      register(values).then((res) => {
-        if (!res?.data?.error) {
+      const data = { ...values };
+      delete data.confirmPassword;
+      register(data).then((res) => {
+        console.log("res", res);
+
+        if (!res?.error) {
           formik.resetForm();
           Swal.fire({
             icon: "success",
@@ -45,7 +43,9 @@ const RegisterPage = () => {
           Swal.fire({
             icon: "error",
             title: "Registration Failed",
-            text: res?.data?.error || "An error occurred during registration.",
+            text:
+              res?.error?.data?.message ||
+              "An error occurred during registration.",
             confirmButtonColor: "#d33",
           });
         }
@@ -83,39 +83,6 @@ const RegisterPage = () => {
       label: "Confirm Password",
       placeholder: "Repeat password",
       type: "password",
-    },
-  ];
-
-  const countryOptions = [
-    {
-      value: "90",
-      label: "Turkey",
-      code: "TR",
-      flag: "https://flagcdn.com/w40/tr.png",
-    },
-    {
-      value: "1",
-      label: "United States",
-      code: "US",
-      flag: "https://flagcdn.com/w40/us.png",
-    },
-    {
-      value: "44",
-      label: "United Kingdom",
-      code: "GB",
-      flag: "https://flagcdn.com/w40/gb.png",
-    },
-    {
-      value: "49",
-      label: "Germany",
-      code: "DE",
-      flag: "https://flagcdn.com/w40/de.png",
-    },
-    {
-      value: "33",
-      label: "France",
-      code: "FR",
-      flag: "https://flagcdn.com/w40/fr.png",
     },
   ];
 
@@ -172,7 +139,6 @@ const RegisterPage = () => {
               <FlagSelectBox
                 value={formik.values.countryCode}
                 onChange={(val) => formik.setFieldValue("countryCode", val)}
-                options={countryOptions}
                 error={
                   formik.touched.countryCode && formik.errors.countryCode
                     ? formik.errors.countryCode

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useMemo } from "react";
 import Select from "react-select";
 
 export default function FlagSelectBox({ value, onChange, options, error }) {
@@ -28,13 +28,49 @@ export default function FlagSelectBox({ value, onChange, options, error }) {
       visibility: "hidden",
     }),
   };
-
-  const customOptions = options.map((opt) => ({
+  const countryOptions = useMemo(
+    () => [
+      {
+        value: "90",
+        label: "Turkey",
+        code: "TR",
+        flag: "https://flagcdn.com/w40/tr.png",
+      },
+      {
+        value: "1",
+        label: "United States",
+        code: "US",
+        flag: "https://flagcdn.com/w40/us.png",
+      },
+      {
+        value: "44",
+        label: "United Kingdom",
+        code: "GB",
+        flag: "https://flagcdn.com/w40/gb.png",
+      },
+      {
+        value: "49",
+        label: "Germany",
+        code: "DE",
+        flag: "https://flagcdn.com/w40/de.png",
+      },
+      {
+        value: "33",
+        label: "France",
+        code: "FR",
+        flag: "https://flagcdn.com/w40/fr.png",
+      },
+    ],
+    []
+  );
+  const customOptions = (options ?? countryOptions).map((opt) => ({
     ...opt,
     label: (
       <div className="flex items-center gap-2">
         <img src={opt.flag} alt={opt.code} className="w-5 h-3 object-cover" />
-        <span className="text-xs">{opt.code} +{opt.value}</span>
+        <span className="text-xs">
+          {opt.code} +{opt.value}
+        </span>
       </div>
     ),
   }));
@@ -47,13 +83,13 @@ export default function FlagSelectBox({ value, onChange, options, error }) {
         Country <span className="text-red-500">*</span>
       </label>
       <Select
-        instanceId="flag-select" 
+        instanceId="flag-select"
         styles={customStyles}
-        isSearchable={false} 
+        isSearchable={false}
         value={selectedOption}
         onChange={(opt) => onChange(opt.value)}
         options={customOptions}
-        isDisabled={!options.length}
+        isDisabled={!customOptions.length}
       />
       {error && <span className="text-xs text-red-600">{error}</span>}
     </div>
