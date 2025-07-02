@@ -23,6 +23,13 @@ export const authApi = api.injectEndpoints({
         body: data,
       }),
     }),
+    verifyTfa: build.mutation({
+      query: ({ sessionToken, code }) => ({
+        url: "/auth/verify-2fa",
+        method: "POST",
+        body: { sessionToken, code },
+      }),
+    }),
     refreshToken: build.query({
       query: () => "auth/refresh",
       providesTags: ["Auth"],
@@ -31,4 +38,9 @@ export const authApi = api.injectEndpoints({
   overrideExisting: false,
 });
 
-export const { useLoginMutation, useRegisterMutation,useForgotPasswordMutation  } = authApi;
+export const {
+  useLoginMutation,
+  useRegisterMutation,
+  useForgotPasswordMutation,
+  useVerifyTfaMutation
+} = authApi;
