@@ -1,4 +1,5 @@
 "use client";
+import BlogBreadcrumb from "@/components/Common/BlogBreadcrumb";
 import { dummyBlogs } from "@/data/blogs";
 import { useParams } from "next/navigation";
 import React from "react";
@@ -17,6 +18,8 @@ const BlogDetailPage = () => {
 
   return (
     <div className="max-w-4xl mx-auto py-10 px-4">
+      <BlogBreadcrumb title={blog.title} />
+
       {/* Görsel */}
       {blog.image && (
         <img

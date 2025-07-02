@@ -1,73 +1,54 @@
-// src/components/Homepage/FeaturedBlogs.jsx
-import { dummyBlogs } from "@/data/blogs";
-import BlogCard from "./BlogCard";
+import Link from "next/link";
 import Button from "../Common/Button";
 import Title from "../Common/Title";
-import { motion } from "framer-motion";
+import { dummyBlogs } from "@/data/blogs";
 
-// Motion variants
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
-export default function FeaturedBlogs({ count = 3 }) {
-  const featured = dummyBlogs.slice(0, count);
+export default function FeaturedBlogs({ fullWidth = false }) {
+  const blog = dummyBlogs[0];
 
   return (
-    <section className="py-12">
-      <div className="container mx-auto max-w-7xl px-4">
-        <Title
-          level={3}
-          children="Our Featured Blogs"
-          align="start"
-          size="text-lg md:text-5xl"
-          weight="bold"
-          color="text-black"
-          className="uppercase"
-        />
-
-        {/* Animated grid container with equal-height items */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 items-stretch"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          {featured.map((blog) => (
-            <motion.div
-              key={blog.slug}
-              variants={itemVariants}
-              className="h-full min-h-[450px]"
-            >
-              <BlogCard
-                slug={blog.slug}
-                image={blog.image}
-                title={blog.title}
-                summary={blog.summary}
-                date={blog.date}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <div className="mt-8 text-center">
-          <Button
-            size="md"
-            variant="primary"
-            children="View All Blogs"
-            className="px-6 py-2"
+    <section
+      className={`py-8 bg-gray-50 ${
+        fullWidth ? "w-full px-6" : "container mx-auto max-w-7xl px-4"
+      }`}
+    >
+      <Title
+        level={3}
+        children="Linkspace Blogs"
+        align={fullWidth ? "start" : "center"}
+        size="text-xl md:text-3xl"
+        weight="bold"
+        color="text-black"
+        className="uppercase mb-6"
+      />
+      <div className="grid md:grid-cols-2 gap-6 items-center">
+        {/* Görsel */}
+        <div className="rounded-xl overflow-hidden shadow-md h-52 md:h-64">
+          <img
+            src={blog.image}
+            alt={blog.title}
+            className="w-full h-full object-cover"
           />
+        </div>
+
+        {/* İçerik */}
+        <div className="flex flex-col space-y-3">
+          <span className="text-xl font-bold text-black">En Son Çıkanlar</span>
+          <h2 className="text-xl md:text-2xl font-semibold text-gray-900">
+            {blog.title}
+          </h2>
+          <p className="text-xs text-gray-500">{blog.date}</p>
+          <p className="text-sm text-gray-700 leading-relaxed line-clamp-3">
+            {blog.summary}
+          </p>
+
+          <div>
+            <Link href={`/blog/${blog.slug}`}>
+              <Button size="sm" className="py-1.5 px-4 text-sm">
+                Hemen Oku
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

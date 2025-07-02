@@ -1,10 +1,13 @@
 export const dummyBlogs = [
   {
     slug: "how-to-search-for-a-job-effectively",
-    image: "https://static.daktilo.com/sites/1085/uploads/2022/05/28/large/is-arama.jpg",
+    image:
+      "https://static.daktilo.com/sites/1085/uploads/2022/05/28/large/is-arama.jpg",
     title: "How to Search for a Job Effectively",
-    summary: "Learn smart strategies and tools for landing your next job faster and smarter.",
+    summary:
+      "Learn smart strategies and tools for landing your next job faster and smarter.Learn smart strategies and tools for landing your next job faster and smarter.Learn smart strategies and tools for landing your next job faster and smarter.Learn smart strategies and tools for landing your next job faster and smarter. ",
     date: "2025-01-10",
+    category: "Teknoloji",
     content: `
       <p class="mb-4 text-black">
         Searching for a job is more than just a routine task — it's a strategic project that requires planning, organization, and persistence. In today’s digital landscape, job seekers must adopt modern tools and techniques to stand out from the competition. Whether you're just beginning your career journey or transitioning into a new field, applying effective search methods can drastically improve your chances.
@@ -51,14 +54,16 @@ export const dummyBlogs = [
       <p class="text-blue-900 font-semibold">
         ✅ Keep refining your approach, and your dream job will find you faster than you think.
       </p>
-    `
+    `,
   },
   {
     slug: "how-to-write-an-attractive-job-posting",
-    image: "https://static.daktilo.com/sites/1085/uploads/2022/05/28/large/is-arama.jpg",
+    image:
+      "https://static.daktilo.com/sites/1085/uploads/2022/05/28/large/is-arama.jpg",
     title: "How to Write an Attractive Job Posting",
     summary: "Tips for employers to craft job posts that attract top talent.",
     date: "2025-01-18",
+    category: "Teknoloji",
     content: `
       <p class="mb-4 text-black">
         A well-crafted job posting is your company's first impression to potential employees. It goes beyond just listing requirements — it's a reflection of your brand, culture, and how seriously you take attracting the right talent. In a competitive hiring market, clear and compelling job descriptions can drastically improve both the <strong>quality</strong> and <strong>quantity</strong> of applications you receive.
@@ -100,14 +105,17 @@ export const dummyBlogs = [
       <p class="text-purple-900 font-semibold">
         ✅ Remember: Hiring is a two-way street. Just as candidates want to impress, so should your job post.
       </p>
-    `
+    `,
   },
   {
     slug: "how-to-know-if-you-love-your-job",
-    image: "https://static.daktilo.com/sites/1085/uploads/2022/05/28/large/is-arama.jpg",
+    image:
+      "https://static.daktilo.com/sites/1085/uploads/2022/05/28/large/is-arama.jpg",
     title: "How to Know If You Love Your Job",
-    summary: "Discover signs of job satisfaction and tips for aligning your career with your passions.",
+    summary:
+      "Discover signs of job satisfaction and tips for aligning your career with your passions.",
     date: "2025-01-25",
+    category: "Kariyer",
     content: `
       <p class="mb-4 text-black">
         Feeling fulfilled at work goes beyond a paycheck — it's about purpose, growth, and daily enjoyment. Recognizing whether your job truly resonates with your values and goals can guide you toward a more satisfying career path. Learn how to gauge your job love and take steps to ensure you’re in the right place.
@@ -150,14 +158,17 @@ export const dummyBlogs = [
       <p class="text-green-900 font-semibold">
         ✅ Embrace growth and fulfillment by tuning into what lights you up every day.
       </p>
-    `
+    `,
   },
   {
     slug: "mastering-networking-for-career-growth",
-    image: "https://static.daktilo.com/sites/1085/uploads/2022/05/28/large/is-arama.jpg",
+    image:
+      "https://static.daktilo.com/sites/1085/uploads/2022/05/28/large/is-arama.jpg",
     title: "Mastering Networking for Career Growth",
-    summary: "Learn how to build meaningful professional connections that propel your career forward.",
+    summary:
+      "Learn how to build meaningful professional connections that propel your career forward.",
     date: "2025-02-02",
+    category: "Kariyer",
     content: `
       <p class="mb-4 text-black">
         Networking isn't just collecting contacts — it's cultivating relationships that support mutual growth. Whether you're exploring new opportunities or aiming for a promotion, a strong network can open doors you never knew existed.
@@ -198,14 +209,17 @@ export const dummyBlogs = [
       <p class="text-teal-900 font-semibold">
         ✅ Invest in relationships today for exponential career returns tomorrow.
       </p>
-    `
+    `,
   },
   {
     slug: "tips-for-negotiating-your-salary-successfully",
-    image: "https://static.daktilo.com/sites/1085/uploads/2022/05/28/large/is-arama.jpg",
+    image:
+      "https://static.daktilo.com/sites/1085/uploads/2022/05/28/large/is-arama.jpg",
     title: "Tips for Negotiating Your Salary Successfully",
-    summary: "Expert advice on how to approach salary negotiations with confidence and secure the compensation you deserve.",
+    summary:
+      "Expert advice on how to approach salary negotiations with confidence and secure the compensation you deserve.",
     date: "2025-02-10",
+    category: "İpuçları",
     content: `
       <p class="mb-4 text-black">
         Negotiating salary can feel daunting, but it's a critical skill to ensure you're fairly compensated. With the right preparation and mindset, you can approach negotiations confidently and achieve a win-win outcome.
@@ -243,14 +257,17 @@ export const dummyBlogs = [
       <p class="text-red-900 font-semibold">
         ✅ Prepare thoroughly, communicate clearly, and secure the compensation you deserve.
       </p>
-    `
+    `,
   },
   {
     slug: "how-to-ace-your-next-interview",
-    image: "https://static.daktilo.com/sites/1085/uploads/2022/05/28/large/is-arama.jpg",
+    image:
+      "https://static.daktilo.com/sites/1085/uploads/2022/05/28/large/is-arama.jpg",
     title: "How to Ace Your Next Interview",
-    summary: "Essential techniques and preparation tips to help you impress interviewers and land the job.",
+    summary:
+      "Essential techniques and preparation tips to help you impress interviewers and land the job.",
     date: "2025-02-18",
+    category: "İpuçları",
     content: `
       <p class="mb-4 text-black">
         Interviews can be the most nerve-wracking part of the job search, but with the right strategy, you can walk in feeling prepared and confident. Discover the key steps to make a stellar impression.
@@ -288,6 +305,6 @@ export const dummyBlogs = [
       <p class="text-indigo-900 font-semibold">
         ✅ Walk in prepared, stay authentic, and leave a lasting impression.
       </p>
-    `
-  }
+    `,
+  },
 ];
