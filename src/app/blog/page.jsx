@@ -4,7 +4,6 @@ import Link from "next/link";
 import { dummyBlogs } from "@/data/blogs";
 import BlogSlider from "@/components/Homepage/BlogSlider";
 import Title from "@/components/Common/Title";
-import BlogBreadcrumb from "@/components/Common/BlogBreadcrumb";
 import FeaturedBlogs from "@/components/Homepage/FeaturedBlogs";
 
 const BlogPage = () => {
@@ -25,7 +24,7 @@ const BlogPage = () => {
 
   return (
     <div className="py-10 overflow-x-hidden">
-      <div className="flex justify-start max-w-7xl px-10">
+      <div className="w-full flex justify-start">
         <FeaturedBlogs fullWidth />
       </div>
 
@@ -52,7 +51,6 @@ const BlogPage = () => {
           ))}
         </div>
 
-        {/* Arama kutusu (sağ taraf) */}
         {/* Arama kutusu (sağ taraf) */}
         <div className="w-full md:w-auto flex items-center gap-2">
           <span className="text-sm font-medium text-gray-700 whitespace-nowrap">

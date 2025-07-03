@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import Providers from "@/components/Layout/Provider";
+import { NextIntlClientProvider } from "next-intl";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,13 +24,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Providers>
-        <body className="bg-white ">
-          <Header />
-          <main className="min-h-screen pt-16">{children}</main>
-          <Footer />
-        </body>
-      </Providers>
+      <NextIntlClientProvider locale="tr">
+        <Providers>
+          <body className="bg-white ">
+            <Header />
+            <main className="min-h-screen pt-16">{children}</main>
+            <Footer />
+          </body>
+        </Providers>
+      </NextIntlClientProvider>
     </html>
   );
 }
