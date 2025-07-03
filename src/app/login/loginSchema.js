@@ -1,12 +1,25 @@
+// src/app/login/loginSchema.js
 import * as Yup from "yup";
+import en from "../../../messages/en.json";
+import tr from "../../../messages/tr.json";
 
-export const loginValidationSchema = Yup.object().shape({
-  email: Yup.string()
-    .email("Invalid email address") 
-    .required("Email is required")
-    .min(5, "Email must be at least 5 characters"),
+/**
+ * @param {string} locale
+ * @returns {Yup.ObjectSchema}
+ */
+export const loginValidationSchema = (locale) => {
+  // if your locale strings are "en" or "tr" (or start with those),
+  // this will pick the right block:
+  const isTR = locale.toLowerCase().startsWith("tr");
+  const msgs = isTR ? tr.loginSection : en.loginSection;
 
-  password: Yup.string()
-    .required("Password is required")
-    .min(6, "Password must be at least 6 characters")
-});
+  return Yup.object().shape({
+    email: Yup.string()
+      .email(msgs.emailInvalid)
+      .required(msgs.emailRequired)
+      .min(5, msgs.emailMin),
+    password: Yup.string()
+      .required(msgs.passwordRequired)
+      .min(6, msgs.passwordMin),
+  });
+};

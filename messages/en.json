@@ -1,0 +1,254 @@
+{
+  "header": {
+    "brand": "LinkSpace",
+    "home": "Home",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "login": "Login",
+    "signup": "Sign Up"
+  },
+  "bannerSection": {
+    "start": "Get Started Now",
+    "title": "Manage your connections with LinkSpace",
+    "description": "Collect, share, and analyze your connections in one place. Simplify your work with a modern and secure interface.",
+    "contact": "Contact Us"
+  },
+  "howItWorksSection": {
+    "heading": "How It Works",
+    "step1Title": "Increase in Membership",
+    "step1Description": "Grow your user base organically through smart campaigns.",
+    "step2Title": "Boost Member Engagement",
+    "step2Description": "Keep your audience coming back with engaging features.",
+    "step3Title": "Increase Revenue",
+    "step3Description": "Turn your platform into a source of income efficiently.",
+    "contact": "Contact Us"
+  },
+  "featureSection": {
+    "trusted": "Trusted Worldwide",
+    "usersCompanies": "users and 10,000+ companies rely on LinkSpace",
+    "description": "LinkSpace connects talent with opportunity across the globe. We’re committed to delivering a secure, scalable job marketplace for companies and job seekers alike.",
+    "explore": "Explore Features",
+    "uptimeText": "% uptime",
+    "uptimeDesc": "Reliable infrastructure ensures uninterrupted access for all users.",
+    "activeUsersText": "+ active users",
+    "activeUsersDesc": "Millions trust LinkSpace to find the right job or candidate.",
+    "countriesText": "+ countries served",
+    "countriesDesc": "LinkSpace is used in over 100 countries worldwide.",
+    "dailyApplicationsText": "daily applications",
+    "dailyApplicationsDesc": "Over 5 million job applications processed every day."
+  },
+  "faqSection": {
+    "q1": {
+      "question": "What is LinkSpace?",
+      "answer": "LinkSpace is a platform that connects job seekers with companies through modern, efficient, and secure job listings."
+    },
+    "q2": {
+      "question": "How can I register?",
+      "answer": "Click the 'Sign Up' button on the homepage to quickly create your account and start exploring opportunities."
+    },
+    "q3": {
+      "question": "Who is LinkSpace for?",
+      "answer": "LinkSpace is ideal for job seekers, HR teams, recruiters, freelancers, and anyone looking to hire or get hired globally."
+    },
+    "q4": {
+      "question": "Is there a subscription fee?",
+      "answer": "LinkSpace offers a free membership with optional premium features for employers and recruiters."
+    },
+    "q5": {
+      "question": "Is my data secure?",
+      "answer": "Yes, all user data is protected under GDPR-compliant standards and stored with advanced encryption."
+    },
+    "q6": {
+      "question": "How do I contact support?",
+      "answer": "You can reach our support team via the Contact page or through the live chat on the platform."
+    },
+    "q7": {
+      "question": "How can I grow my job visibility?",
+      "answer": "By using LinkSpace's featured listings, smart filtering, and performance analytics, you can reach the right candidates faster."
+    }
+  },
+  "aboutSection": {
+    "heading": "About LinkSpace",
+    "subtitle": "Bridging Talent and Opportunity",
+    "description": "LinkSpace is a modern job marketplace that connects ambitious professionals with forward-thinking companies. We streamline the application process, empower candidates with the right tools, and help employers discover top talent fast.",
+    "missionTitle": "Our Mission",
+    "missionDesc": "To empower job seekers with a seamless application experience and equip employers with powerful tools to find their perfect match.",
+    "visionTitle": "Our Vision",
+    "visionDesc": "To be the go-to platform where every opportunity meets the right talent, fostering growth and success for all.",
+    "alt": {
+      "dots": "Decorative dots background",
+      "team": "Team at work",
+      "freelancer": "Freelancer at work"
+    }
+  },
+  "statsSection": {
+    "label": "Our Impact",
+    "title": "Numbers That",
+    "highlight": "Speak",
+    "description": "Connecting talent with opportunity across the globe",
+    "jobListings": "Job Listings",
+    "partnerCompanies": "Partner Companies",
+    "successfulMatches": "Successful Matches",
+    "talentsOnboarded": "Talents Onboarded"
+  },
+"chooseUsSection": {
+    "label": "Why Choose Us",
+    "heading": "Why Choose Us",
+    "subheading": "Features You’ll Love",
+    "description": "Discover the features that make us the preferred choice for job seekers and employers worldwide",
+    "features": {
+      "advancedJobSearch": {
+        "title": "Advanced Job Search",
+        "desc": "Easily filter and find the perfect position with our powerful search tools."
+      },
+      "curatedListings": {
+        "title": "Curated Listings",
+        "desc": "Handpicked job opportunities tailored to your skills and interests."
+      },
+      "verifiedEmployers": {
+        "title": "Verified Employers",
+        "desc": "Work with trusted companies verified by our platform."
+      },
+      "realTimeAlerts": {
+        "title": "Real-time Alerts",
+        "desc": "Receive instant notifications for new opportunities matching your profile."
+      },
+      "analyticsInsights": {
+        "title": "Analytics & Insights",
+        "desc": "Gain data-driven insights to improve your job search strategy."
+      },
+      "mobileFriendly": {
+        "title": "Mobile Friendly",
+        "desc": "Job searching on the go with our responsive mobile interface."
+      },
+      "resumeBuilder": {
+        "title": "Resume Builder",
+        "desc": "Create a professional resume quickly with customizable templates."
+      },
+      "securePrivate": {
+        "title": "Secure & Private",
+        "desc": "Your data is safe with our top-notch security measures."
+      }
+    }
+  },
+  "teamSection": {
+    "label": "Our Team",
+    "title": "Meet Our",
+    "highlight": "Team",
+    "description": "Passionate professionals dedicated to connecting talent with opportunity",
+    "aboutTitle": "About",
+    "members": {
+      "1": {
+        "role": "Frontend Developer",
+        "about": "Mehmet has over 5 years of experience in building responsive web applications."
+      },
+      "2": {
+        "role": "Backend Developer",
+        "about": "Eren specializes in server-side logic and database management with Node.js and Laravel."
+      }
+    },
+    "skills": {
+      "leadership": "Leadership",
+      "innovation": "Innovation",
+      "strategy": "Strategy"
+    }
+  },
+  "contactSection": {
+    "getInTouchHeading": "Get in Touch With Us",
+    "getInTouchDesc": "If you have any questions or feedback, feel free to reach out. You can quickly contact us by filling out the form below.",
+    "contactFormHeading": "Contact Form",
+    "firstNameLabel": "First Name",
+    "firstNamePlaceholder": "Enter your first name",
+    "lastNameLabel": "Last Name",
+    "lastNamePlaceholder": "Enter your last name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Write your message (max 250 characters)",
+    "send": "Send",
+    "sending": "Sending...",
+    "successMessage": "Your message has been sent successfully.",
+    "errorMessage": "An error occurred while sending your message. Please try again."
+  },
+  "contactSectionForm": {
+    "getInTouchHeading": "Get in Touch With Us",
+    "getInTouchDesc": "If you have any questions or feedback, feel free to reach out. You can quickly contact us by filling out the form below.",
+    "contactFormHeading": "Contact Form",
+
+    "firstNameLabel": "First Name",
+    "firstNamePlaceholder": "Enter your first name",
+    "lastNameLabel": "Last Name",
+    "lastNamePlaceholder": "Enter your last name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Write your message (max 250 characters)",
+
+    "send": "Send",
+    "sending": "Sending…",
+    "successMessage": "Your message has been sent successfully.",
+    "errorMessage": "An error occurred while sending your message. Please try again.",
+
+    "firstNameRequired": "First name is required.",
+    "firstNameMax": "First name must be at most 50 characters.",
+    "lastNameRequired": "Last name is required.",
+    "lastNameMax": "Last name must be at most 50 characters.",
+    "emailInvalid": "Please enter a valid email address.",
+    "emailRequired": "Email is required.",
+    "messageRequired": "Message is required.",
+    "messageMax": "Message must be at most 250 characters."
+  },
+  "loginSection": {
+    "welcome": "Welcome to Linkspace! 👋",
+    "subtitle": "Please log in to your account and get things back on track.",
+    "emailLabel": "Email or Username",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "••••••••",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign In",
+    "signingIn": "Signing in…",
+    "newHere": "New here?",
+    "signUp": "Create an account",
+    "loginErrorTitle": "Login Failed",
+    "unknownError": "An unknown error occurred.",
+    "emailInvalid": "Invalid email address.",
+    "emailRequired": "Email is required.",
+    "emailMin": "Email must be at least 5 characters.",
+    "passwordRequired": "Password is required.",
+    "passwordMin": "Password must be at least 6 characters."
+  },
+  "footer": {
+    "brand": "LinkSpace",
+    "aboutDescription": "LinkSpace is a modern and secure platform connecting job seekers with employers, offering the latest job listings for your career.",
+    "quickLinks": {
+      "title": "Quick Links",
+      "home": "Home",
+      "about": "About Us",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "resources": {
+      "title": "Resources",
+      "faq": "FAQ",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "support": "Support"
+    },
+    "contact": {
+      "title": "Contact",
+      "address": "Istanbul, Turkey",
+      "phone": "+90 212 000 00 00",
+      "email": "info@linkspace.com"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn"
+    },
+    "copyright": "© {year} LinkSpace. All rights reserved."
+  }
+}

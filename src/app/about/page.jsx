@@ -4,7 +4,7 @@ import StatsSection from "@/components/About/StatsSection";
 import TeamSection from "@/components/About/TeamSection";
 
 export default function AboutPage() {
-  return <div className="py-20 ">
+  return <div  >
     <AboutSection/>
     <TeamSection/>
     <StatsSection/>
