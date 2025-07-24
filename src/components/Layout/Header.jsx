@@ -17,10 +17,7 @@ import Button from "../Common/Button";
 import { motion, AnimatePresence } from "framer-motion";
 import LanguageSwitcher from "../Common/Language";
 import { useTranslations } from "next-intl";
-<<<<<<< HEAD
 import ProfileDropdown from "../Common/ProfileDropdown";
-=======
->>>>>>> 2fb0a22fd293dfa1a5948f66f62ab3dd6b53300a
 
 export default function EnhancedHeaderTailwind() {
   const t = useTranslations("header");
@@ -156,10 +153,7 @@ export default function EnhancedHeaderTailwind() {
               </Button>
             </Link>
           </div>
-<<<<<<< HEAD
           <ProfileDropdown />
-=======
->>>>>>> 2fb0a22fd293dfa1a5948f66f62ab3dd6b53300a
 
           <button
             onClick={toggleMenu}
