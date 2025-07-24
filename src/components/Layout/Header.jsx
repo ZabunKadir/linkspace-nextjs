@@ -17,6 +17,7 @@ import Button from "../Common/Button";
 import { motion, AnimatePresence } from "framer-motion";
 import LanguageSwitcher from "../Common/Language";
 import { useTranslations } from "next-intl";
+import ProfileDropdown from "../Common/ProfileDropdown";
 
 export default function EnhancedHeaderTailwind() {
   const t = useTranslations("header");
@@ -152,6 +153,7 @@ export default function EnhancedHeaderTailwind() {
               </Button>
             </Link>
           </div>
+          <ProfileDropdown />
 
           <button
             onClick={toggleMenu}

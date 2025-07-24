@@ -1,36 +1,36 @@
-"use client"
+"use client";
 
-import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
-import Button from "../Common/Button"
-import Title from "../Common/Title"
-import { useTranslations } from "next-intl"
-import { FaArrowRight } from "react-icons/fa"
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import Button from "../Common/Button";
+import Title from "../Common/Title";
+import { useTranslations } from "next-intl";
+import { FaArrowRight } from "react-icons/fa";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-}
+};
 
 const slideInLeft = {
   hidden: { opacity: 0, x: -30 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
-}
+};
 
 const slideInRight = {
   hidden: { opacity: 0, x: 30 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
-}
+};
 
 const staggerContainer = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.15 } },
-}
+};
 
 export default function SideBySideHero() {
-  const t = useTranslations("bannerSection")
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-10%" })
+  const t = useTranslations("bannerSection");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
     <motion.section
@@ -47,7 +47,10 @@ export default function SideBySideHero() {
           variants={staggerContainer}
         >
           {/* Left Content */}
-          <motion.div className="space-y-6 text-center md:text-start" variants={slideInLeft}>
+          <motion.div
+            className="space-y-6 text-center md:text-start"
+            variants={slideInLeft}
+          >
             {/* Badge */}
             <motion.div
               className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/70 backdrop-blur-sm text-indigo-700 text-xs sm:text-sm font-medium border border-indigo-200 shadow-sm"
@@ -72,7 +75,10 @@ export default function SideBySideHero() {
             </motion.div>
 
             {/* Description */}
-            <motion.p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-full md:max-w-lg mx-auto md:mx-0 px-4" variants={fadeIn}>
+            <motion.p
+              className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-full md:max-w-lg mx-auto md:mx-0 px-4"
+              variants={fadeIn}
+            >
               {t("description")}
             </motion.p>
 
@@ -89,7 +95,10 @@ export default function SideBySideHero() {
             </motion.div>
           </motion.div>
 
-          <motion.div className="flex justify-center px-10 md:justify-end" variants={slideInRight}>
+          <motion.div
+            className="flex justify-center px-10 md:justify-end"
+            variants={slideInRight}
+          >
             <div className="relative w-full md:max-w-lg">
               <motion.div
                 className="relative bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-xl border border-white/30"
@@ -114,7 +123,11 @@ export default function SideBySideHero() {
               <motion.div
                 className="absolute -bottom-4 -right-4 w-5 h-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full shadow-lg"
                 animate={{ y: [0, -8, 0], scale: [1, 1.15, 1] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               />
             </div>
           </motion.div>
@@ -132,5 +145,5 @@ export default function SideBySideHero() {
         </div>
       </motion.div>
     </motion.section>
-  )
+  );
 }
