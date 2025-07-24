@@ -1,25 +1,30 @@
+// src/components/Contact/ContactForm.jsx
 "use client";
+
 import { useState, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import contactValidationSchema from "./contactValidationSchema";
 import { motion } from "framer-motion";
 import Button from "../Common/Button";
 import Title from "../Common/Title";
+import { useTranslations, useLocale } from "next-intl";
 
 const ContactFormFormik = ({ onStatusChange }) => {
+  const t = useTranslations("contactSectionForm");
+  const locale = useLocale();
+
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       onStatusChange({
         type: "success",
-        message: "Your message has been sent successfully.",
+        message: t("successMessage"),
       });
       resetForm();
-    } catch (error) {
+    } catch {
       onStatusChange({
         type: "error",
-        message:
-          "An error occurred while sending your message. Please try again.",
+        message: t("errorMessage"),
       });
     } finally {
       setSubmitting(false);
@@ -29,20 +34,21 @@ const ContactFormFormik = ({ onStatusChange }) => {
   return (
     <Formik
       initialValues={{ name: "", lastname: "", email: "", message: "" }}
-      validationSchema={contactValidationSchema("en")}
+      validationSchema={contactValidationSchema(locale)}
       onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
         <Form className="space-y-4">
+          {/* Name / Lastname */}
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
             <div className="w-full">
               <label className="block text-sm font-medium text-gray-700">
-                First Name
+                {t("firstNameLabel")}
               </label>
               <Field
                 name="name"
                 type="text"
-                placeholder="Enter your first name"
+                placeholder={t("firstNamePlaceholder")}
                 className="mt-1 p-2 w-full border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-ritimBlack"
               />
               <ErrorMessage
@@ -51,14 +57,15 @@ const ContactFormFormik = ({ onStatusChange }) => {
                 className="text-red-500 text-sm mt-1"
               />
             </div>
+
             <div className="w-full">
               <label className="block text-sm font-medium text-gray-700">
-                Last Name
+                {t("lastNameLabel")}
               </label>
               <Field
                 name="lastname"
                 type="text"
-                placeholder="Enter your last name"
+                placeholder={t("lastNamePlaceholder")}
                 className="mt-1 p-2 w-full border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-ritimBlack"
               />
               <ErrorMessage
@@ -69,14 +76,15 @@ const ContactFormFormik = ({ onStatusChange }) => {
             </div>
           </div>
 
+          {/* Email */}
           <div>
             <label className="block text-sm font-medium text-gray-700">
-              Email
+              {t("emailLabel")}
             </label>
             <Field
               name="email"
               type="email"
-              placeholder="Enter your email address"
+              placeholder={t("emailPlaceholder")}
               className="mt-1 p-2 w-full border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-ritimBlack"
             />
             <ErrorMessage
@@ -86,17 +94,18 @@ const ContactFormFormik = ({ onStatusChange }) => {
             />
           </div>
 
+          {/* Message */}
           <div>
             <label className="block text-sm font-medium text-gray-700">
-              Message
+              {t("messageLabel")}
             </label>
             <Field
               name="message"
               as="textarea"
-              placeholder="Write your message (max 250 characters)"
+              placeholder={t("messagePlaceholder")}
               maxLength={250}
-              className="mt-1 p-2 w-full border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-ritimBlack"
               rows={4}
+              className="mt-1 p-2 w-full border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-ritimBlack"
             />
             <ErrorMessage
               name="message"
@@ -105,29 +114,29 @@ const ContactFormFormik = ({ onStatusChange }) => {
             />
           </div>
 
+          {/* Submit */}
           <Button
             type="submit"
             size="md"
-            fullWidth="true"
-            varitant="primary"
+            fullWidth
+            variant="primary"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Sending..." : "Send"}
+            {isSubmitting ? t("sending") : t("send")}
           </Button>
         </Form>
       )}
     </Formik>
   );
-};
+};  
 
-const ContactForm = () => {
+export default function ContactForm() {
+  const t = useTranslations("contactSectionForm");
   const [formMessage, setFormMessage] = useState(null);
 
   useEffect(() => {
     if (formMessage) {
-      const timer = setTimeout(() => {
-        setFormMessage(null);
-      }, 10000);
+      const timer = setTimeout(() => setFormMessage(null), 10000);
       return () => clearTimeout(timer);
     }
   }, [formMessage]);
@@ -135,7 +144,7 @@ const ContactForm = () => {
   return (
     <div className="min-h-screen flex items-center justify-center px-6">
       <div className="flex flex-col items-center justify-center w-full max-w-7xl space-y-6 md:space-y-0 md:flex-row md:space-x-8">
-        {/* Left Text and Image */}
+        {/* Left Side */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -145,27 +154,27 @@ const ContactForm = () => {
         >
           <Title
             level={3}
-            children="Get in Touch With Us"
             align="start"
             size="text-2xl md:text-4xl"
             weight="semibold"
             color="text-black"
             className="uppercase font-calsans"
-          />
+          >
+            {t("getInTouchHeading")}
+          </Title>
           <p className="text-lg text-gray-700 mb-6 mt-5 leading-relaxed">
-            If you have any questions or feedback, feel free to reach out. You
-            can quickly contact us by filling out the form below.
+            {t("getInTouchDesc")}
           </p>
           <div className="flex justify-center md:justify-start">
             <img
               src="/contact.png"
-              alt="Illustration"
+              alt={t("getInTouchHeading")}
               className="w-[320px] sm:w-[400px] md:w-[490px] object-contain"
             />
           </div>
         </motion.div>
 
-        {/* Right Form */}
+        {/* Right Side Form */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -174,7 +183,7 @@ const ContactForm = () => {
           className="w-full md:w-1/2 max-w-lg border border-gray-300 p-6 rounded-lg shadow-md bg-white"
         >
           <h3 className="text-xl font-semibold text-darkPurple mb-4">
-            Contact Form
+            {t("contactFormHeading")}
           </h3>
 
           <ContactFormFormik onStatusChange={setFormMessage} />
@@ -194,6 +203,4 @@ const ContactForm = () => {
       </div>
     </div>
   );
-};
-
-export default ContactForm;
+}

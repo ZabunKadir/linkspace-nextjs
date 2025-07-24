@@ -11,11 +11,16 @@ import Title from "../Common/Title";
 
 export default function BlogSlider() {
   return (
-    <div className="py-12 bg-gray-50">
+    <div className="py-12">
       <div className="w-full px-4">
-        <Title className="text-2xl font-semibold mb-4 px-4">
-          En Çok Okunan Yazılar
-        </Title>
+        <Title
+          level={3}
+          children="En Çok Okunan Yazılar"         
+          size="text-xl md:text-3xl"
+          weight="bold"
+          color="text-black"
+          className="uppercase mb-6 px-10"
+        />
         <div className="relative  mx-auto px-10">
           {/* Sol Buton */}
           <button
@@ -25,12 +30,12 @@ export default function BlogSlider() {
             <AiOutlineLeft className=" text-2xl text-blue-600" />
           </button>
 
-          {/* Sağ Buton */}
-          <button
-            className="swiper-button-next-custom absolute px-4 top-1/2 -translate-y-1/2 -right-4 md:-right-6 z-10 bg-white  p-1.5"
-            aria-label="İleri"
-          >
-            <AiOutlineRight className="text-2xl text-blue-600" />
+            {/* Sağ Buton */}
+            <button
+              className="swiper-button-next-custom absolute px-4 top-1/2 -translate-y-1/2 -right-4 md:-right-6 z-10 bg-white  p-1.5"
+              aria-label="İleri"
+            >
+              <AiOutlineRight className="text-2xl text-blue-600" />
           </button>
 
           {/* Swiper */}

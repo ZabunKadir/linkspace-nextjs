@@ -1,0 +1,254 @@
+{
+  "header": {
+    "brand": "LinkSpace",
+    "home": "Anasayfa",
+    "about": "Hakkında",
+    "blog": "Blog",
+    "contact": "İletişim",
+    "login": "Giriş Yap",
+    "signup": "Kayıt Ol"
+  },
+  "bannerSection": {
+    "start": "Hemen Başla",
+    "title": "LinkSpace ile bağlantılarını yönet",
+    "description": "Bağlantılarını tek bir yerde topla, paylaş ve analiz et. Modern ve güvenli arayüzle işini kolaylaştır.",
+    "contact": "İletişime Geç"
+  },
+  "howItWorksSection": {
+    "heading": "Nasıl Çalışır",
+    "step1Title": "Üyelikte Artış",
+    "step1Description": "Akıllı kampanyalarla kullanıcı tabanınızı organik olarak büyütün.",
+    "step2Title": "Üye Etkileşimini Artır",
+    "step2Description": "Etkileşimli özelliklerle kitlenizin geri gelmesini sağlayın.",
+    "step3Title": "Geliri Artır",
+    "step3Description": "Platformunuzu verimli bir gelir kaynağına dönüştürün.",
+    "contact": "İletişime Geç"
+  },
+  "featureSection": {
+    "trusted": "Dünya Çapında Güvenilir",
+    "usersCompanies": "kullanıcı ve 10.000+ şirket LinkSpace'e güveniyor",
+    "description": "LinkSpace, yetenekleri dünya çapında fırsatlarla buluşturur. Şirketler ve iş arayanlar için güvenli, ölçeklenebilir bir iş pazarı sunmaya kararlıyız.",
+    "explore": "Özellikleri Keşfet",
+    "uptimeText": "% çalışma süresi",
+    "uptimeDesc": "Güvenilir altyapı tüm kullanıcılar için kesintisiz erişim sağlar.",
+    "activeUsersText": "+ aktif kullanıcı",
+    "activeUsersDesc": "Milyonlarca kullanıcı, doğru işi veya adayı bulmak için LinkSpace'i tercih ediyor.",
+    "countriesText": "+ hizmet verilen ülke",
+    "countriesDesc": "LinkSpace, dünya çapında 100’den fazla ülkede kullanılıyor.",
+    "dailyApplicationsText": "günlük başvuru",
+    "dailyApplicationsDesc": "Her gün 5 milyonun üzerinde iş başvurusu işleniyor."
+  },
+  "faqSection": {
+    "q1": {
+      "question": "LinkSpace nedir?",
+      "answer": "LinkSpace, iş arayanları modern, verimli ve güvenli iş ilanları aracılığıyla şirketlerle buluşturan bir platformdur."
+    },
+    "q2": {
+      "question": "Nasıl kayıt olabilirim?",
+      "answer": "Ana sayfadaki 'Kayıt Ol' butonuna tıklayarak hızlıca hesabınızı oluşturup fırsatları keşfetmeye başlayabilirsiniz."
+    },
+    "q3": {
+      "question": "LinkSpace kimin için?",
+      "answer": "LinkSpace, iş arayanlar, İK ekipleri, işe alım uzmanları, serbest çalışanlar ve küresel ölçekte işe alım yapan herkes için idealdir."
+    },
+    "q4": {
+      "question": "Abonelik ücreti var mı?",
+      "answer": "LinkSpace, işverenler ve işe alım uzmanları için isteğe bağlı premium özelliklerle ücretsiz bir üyelik sunar."
+    },
+    "q5": {
+      "question": "Verilerim güvende mi?",
+      "answer": "Evet, tüm kullanıcı verileri GDPR uyumlu standartlarla korunur ve gelişmiş şifreleme ile saklanır."
+    },
+    "q6": {
+      "question": "Destek ekibiyle nasıl iletişime geçerim?",
+      "answer": "Destek ekibimize İletişim sayfası üzerinden veya platformdaki canlı sohbet aracılığıyla ulaşabilirsiniz."
+    },
+    "q7": {
+      "question": "İlan görünürlüğümü nasıl artırabilirim?",
+      "answer": "LinkSpace'in öne çıkan ilanları, akıllı filtreleme ve performans analitikleriyle doğru adaylara daha hızlı ulaşabilirsiniz."
+    }
+  },
+  "aboutSection": {
+    "heading": "LinkSpace Hakkında",
+    "subtitle": "Yetenek ve Fırsatları Bir Araya Getiriyoruz",
+    "description": "LinkSpace, modern bir iş pazarıdır; hırslı profesyonelleri ileri görüşlü şirketlerle buluşturur. Başvuru sürecini kolaylaştırır, adaylara doğru araçları sunar ve işverenlerin en iyi yetenekleri hızlıca keşfetmesine yardımcı olur.",
+    "missionTitle": "Misyonumuz",
+    "missionDesc": "İş arayanlara kusursuz bir başvuru deneyimi sunmak ve işverenlere ideal adayı bulmaları için güçlü araçlar sağlamak.",
+    "visionTitle": "Vizyonumuz",
+    "visionDesc": "Her fırsatın doğru yetenekle buluştuğu, tüm paydaşların büyüme ve başarıya ulaştığı tercih edilen platform olmak.",
+    "alt": {
+      "dots": "Dekoratif noktalı arka plan",
+      "team": "Çalışan ekip",
+      "freelancer": "Çalışan serbest uzman"
+    }
+  },
+  "statsSection": {
+    "label": "Etkimiz",
+    "title": "Konuşan Sayılar",
+    "highlight": "",
+    "description": "Yetenekleri dünya çapında fırsatlarla buluşturuyoruz",
+    "jobListings": "İş İlanları",
+    "partnerCompanies": "Ortak Şirketler",
+    "successfulMatches": "Başarılı Eşleşmeler",
+    "talentsOnboarded": "Yetenekler"
+  },
+"chooseUsSection": {
+    "label": "Neden Bizi Tercih Etmelisiniz",
+    "heading": "Neden Bizi Seçmelisiniz",
+    "subheading": "Beğeneceğiniz Özellikler",
+    "description": "İş arayanlar ve işverenler için bizi tercih edilen platform yapan özellikleri keşfedin",
+    "features": {
+      "advancedJobSearch": {
+        "title": "Gelişmiş İş Arama",
+        "desc": "Güçlü arama araçlarımızla mükemmel pozisyonu kolayca filtreleyin ve bulun."
+      },
+      "curatedListings": {
+        "title": "Seçilmiş İlanlar",
+        "desc": "Yeteneklerinize ve ilgi alanlarınıza uygun el değmemiş iş fırsatları."
+      },
+      "verifiedEmployers": {
+        "title": "Doğrulanmış İşverenler",
+        "desc": "Platformumuz tarafından doğrulanmış güvenilir şirketlerle çalışın."
+      },
+      "realTimeAlerts": {
+        "title": "Gerçek Zamanlı Bildirimler",
+        "desc": "Profilinize uygun yeni fırsatlar için anında bildirim alın."
+      },
+      "analyticsInsights": {
+        "title": "Analiz & İçgörüler",
+        "desc": "Veri odaklı içgörülerle iş arama stratejinizi geliştirin."
+      },
+      "mobileFriendly": {
+        "title": "Mobil Uyumlu",
+        "desc": "Hareket halindeyken iş arama deneyimi sunan mobil arayüz."
+      },
+      "resumeBuilder": {
+        "title": "Özgeçmiş Oluşturucu",
+        "desc": "Özelleştirilebilir şablonlarla profesyonel bir özgeçmiş oluşturun."
+      },
+      "securePrivate": {
+        "title": "Güvenli & Gizli",
+        "desc": "Verileriniz en üst düzey güvenlik önlemleriyle korunur."
+      }
+    }},
+"teamSection": {
+    "label": "Ekibimiz",
+    "title": "Ekibimizi",
+    "highlight": "Tanıyın",
+    "description": "Yetenekleri fırsatlarla buluşturan tutkulu profesyoneller",
+    "aboutTitle": "Hakkında",
+    "members": {
+      "1": {
+        "role": "Ön Yüz Geliştirici",
+        "about": "Mehmet, responsive web uygulamaları geliştirme konusunda 5 yılı aşkın deneyime sahiptir."
+      },
+      "2": {
+        "role": "Arka Uç Geliştirici",
+        "about": "Eren, Node.js ve Laravel ile sunucu tabanlı mantık ve veri tabanı yönetimi konusunda uzman."
+      }
+    },
+    "skills": {
+      "leadership": "Liderlik",
+      "innovation": "Yenilikçilik",
+      "strategy": "Strateji"
+    }
+  },
+  "contactSection": {
+    "getInTouchHeading": "Bizimle İletişime Geçin",
+    "getInTouchDesc": "Herhangi bir sorunuz veya geri bildiriminiz varsa, bizimle iletişime geçmekten çekinmeyin. Aşağıdaki formu doldurarak hızlıca bize ulaşabilirsiniz.",
+    "contactFormHeading": "İletişim Formu",
+    "firstNameLabel": "Ad",
+    "firstNamePlaceholder": "Adınızı girin",
+    "lastNameLabel": "Soyad",
+    "lastNamePlaceholder": "Soyadınızı girin",
+    "emailLabel": "E-posta",
+    "emailPlaceholder": "E-posta adresinizi girin",
+    "messageLabel": "Mesaj",
+    "messagePlaceholder": "Mesajınızı yazın (maks. 250 karakter)",
+    "send": "Gönder",
+    "sending": "Gönderiliyor...",
+    "successMessage": "Mesajınız başarıyla gönderildi.",
+    "errorMessage": "Mesajınız gönderilirken bir hata oluştu. Lütfen tekrar deneyin."
+  },
+  "contactSectionForm": {
+    "getInTouchHeading": "Bizimle İletişime Geçin",
+    "getInTouchDesc": "Herhangi bir sorunuz veya geri bildiriminiz varsa, bizimle iletişime geçmekten çekinmeyin. Aşağıdaki formu doldurarak hızlıca bize ulaşabilirsiniz.",
+    "contactFormHeading": "İletişim Formu",
+
+    "firstNameLabel": "Ad",
+    "firstNamePlaceholder": "Adınızı girin",
+    "lastNameLabel": "Soyad",
+    "lastNamePlaceholder": "Soyadınızı girin",
+    "emailLabel": "E-posta",
+    "emailPlaceholder": "E-posta adresinizi girin",
+    "messageLabel": "Mesaj",
+    "messagePlaceholder": "Mesajınızı yazın (maks. 250 karakter)",
+
+    "send": "Gönder",
+    "sending": "Gönderiliyor…",
+    "successMessage": "Mesajınız başarıyla gönderildi.",
+    "errorMessage": "Mesajınız gönderilirken bir hata oluştu. Lütfen tekrar deneyin.",
+
+    "firstNameRequired": "Ad alanı zorunludur.",
+    "firstNameMax": "Ad en fazla 50 karakter olmalıdır.",
+    "lastNameRequired": "Soyad alanı zorunludur.",
+    "lastNameMax": "Soyad en fazla 50 karakter olmalıdır.",
+    "emailInvalid": "Lütfen geçerli bir e-posta adresi girin.",
+    "emailRequired": "E-posta alanı zorunludur.",
+    "messageRequired": "Mesaj alanı zorunludur.",
+    "messageMax": "Mesaj en fazla 250 karakter olmalıdır."
+  },
+  
+  "loginSection": {
+    "welcome": "LinkSpace’e Hoş Geldiniz! 👋",
+    "subtitle": "Lütfen hesabınıza giriş yapın ve işlerinizi yoluna koyun.",
+    "emailLabel": "Email veya Kullanıcı Adı",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Şifre",
+    "passwordPlaceholder": "••••••••",
+    "rememberMe": "Beni Hatırla",
+    "forgotPassword": "Şifremi Unuttum?",
+    "signIn": "Giriş Yap",
+    "signingIn": "Giriş Yapılıyor…",
+    "newHere": "Yeni misin?",
+    "signUp": "Hesap Oluştur",
+    "loginErrorTitle": "Giriş Hatası",
+    "unknownError": "Bilinmeyen bir hata oluştu.",
+    "emailInvalid": "Geçersiz e-posta adresi.",
+    "emailRequired": "E-posta gerekli.",
+    "emailMin": "E-posta en az 5 karakter olmalıdır.",
+    "passwordRequired": "Şifre gerekli.",
+    "passwordMin": "Şifre en az 6 karakter olmalıdır."
+  },
+   "footer": {
+    "brand": "LinkSpace",
+    "aboutDescription": "LinkSpace, iş arayanlarla işverenleri buluşturan, modern ve güvenli bir platformdur. Kariyerine yön vermek isteyenlere en güncel ilanları sunar.",
+    "quickLinks": {
+      "title": "Hızlı Linkler",
+      "home": "Anasayfa",
+      "about": "Hakkımızda",
+      "blog": "Blog",
+      "contact": "İletişim"
+    },
+    "resources": {
+      "title": "Kaynaklar",
+      "faq": "SSS",
+      "privacy": "Gizlilik Politikası",
+      "terms": "Kullanım Şartları",
+      "support": "Destek"
+    },
+    "contact": {
+      "title": "İletişim",
+      "address": "İstanbul, Türkiye",
+      "phone": "+90 212 000 00 00",
+      "email": "info@linkspace.com"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn"
+    },
+    "copyright": "© {year} LinkSpace. Tüm hakları saklıdır."
+  }
+}

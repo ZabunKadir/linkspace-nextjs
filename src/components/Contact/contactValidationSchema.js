@@ -1,23 +1,34 @@
+// src/components/Contact/contactValidationSchema.js
 import * as yup from "yup";
+import en from "../../../messages/en.json";
+import tr from "../../../messages/tr.json";
 
-const contactValidationSchema = () => {
+/**
+ * @param {"en"|"tr"} locale
+ */
+const contactValidationSchema = (locale) => {
+  const msgs =
+    locale === "tr"
+      ? tr.contactSectionForm
+      : en.contactSectionForm;
+
   return yup.object().shape({
     name: yup
       .string()
-      .required("First name is required.")
-      .max(50, "First name must be at most 50 characters."),
+      .required(msgs.firstNameRequired)
+      .max(50, msgs.firstNameMax),
     lastname: yup
       .string()
-      .required("Last name is required.")
-      .max(50, "Last name must be at most 50 characters."),
+      .required(msgs.lastNameRequired)
+      .max(50, msgs.lastNameMax),
     email: yup
       .string()
-      .email("Please enter a valid email address.")
-      .required("Email is required."),
+      .email(msgs.emailInvalid)
+      .required(msgs.emailRequired),
     message: yup
       .string()
-      .required("Message is required.")
-      .max(250, "Message must be at most 250 characters."),
+      .required(msgs.messageRequired)
+      .max(250, msgs.messageMax),
   });
 };
 
