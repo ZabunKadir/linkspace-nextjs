@@ -1,10 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-<<<<<<< HEAD
 import MessagesHeader from "../Common/MessagesHeader";
-=======
->>>>>>> 2fb0a22fd293dfa1a5948f66f62ab3dd6b53300a
 
 const containerVariants = {
   hidden: {},
@@ -59,7 +56,6 @@ export default function EnhancedAboutSection() {
             />
           </div>
         </motion.div>
-<<<<<<< HEAD
         <MessagesHeader />
         <motion.div
           className="w-full md:w-1/2 space-y-8"
@@ -70,12 +66,6 @@ export default function EnhancedAboutSection() {
               className="text-xl font-semibold text-gray-500"
               variants={itemVariants}
             >
-=======
-
-        <motion.div className="w-full md:w-1/2 space-y-8" variants={itemVariants}>
-          <div className="space-y-4">
-            <motion.h3 className="text-xl font-semibold text-gray-500" variants={itemVariants}>
->>>>>>> 2fb0a22fd293dfa1a5948f66f62ab3dd6b53300a
               {t("heading")}
             </motion.h3>
 
@@ -88,26 +78,18 @@ export default function EnhancedAboutSection() {
               </span>
             </motion.h2>
 
-<<<<<<< HEAD
             <motion.p
               className="text-lg text-gray-600 leading-relaxed"
               variants={itemVariants}
             >
-=======
-            <motion.p className="text-lg text-gray-600 leading-relaxed" variants={itemVariants}>
->>>>>>> 2fb0a22fd293dfa1a5948f66f62ab3dd6b53300a
               {t("description")}
             </motion.p>
           </div>
 
-<<<<<<< HEAD
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 gap-6"
             variants={containerVariants}
           >
-=======
-          <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-6" variants={containerVariants}>
->>>>>>> 2fb0a22fd293dfa1a5948f66f62ab3dd6b53300a
             <motion.div
               className="group p-6 bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300"
               variants={itemVariants}
@@ -120,28 +102,20 @@ export default function EnhancedAboutSection() {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-<<<<<<< HEAD
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
                     d="M13 10V3L4 14h7v7l9-11h-7z"
                   />
-=======
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
->>>>>>> 2fb0a22fd293dfa1a5948f66f62ab3dd6b53300a
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                 {t("missionTitle")}
               </h3>
-<<<<<<< HEAD
               <p className="text-gray-600 leading-relaxed">
                 {t("missionDesc")}
               </p>
-=======
-              <p className="text-gray-600 leading-relaxed">{t("missionDesc")}</p>
->>>>>>> 2fb0a22fd293dfa1a5948f66f62ab3dd6b53300a
             </motion.div>
 
             <motion.div
@@ -156,7 +130,6 @@ export default function EnhancedAboutSection() {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-<<<<<<< HEAD
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -169,10 +142,6 @@ export default function EnhancedAboutSection() {
                     strokeWidth={2}
                     d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                   />
-=======
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
->>>>>>> 2fb0a22fd293dfa1a5948f66f62ab3dd6b53300a
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">
