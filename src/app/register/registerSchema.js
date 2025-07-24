@@ -15,4 +15,7 @@ export const registerValidationSchema = Yup.object().shape({
   phone: Yup.string()
     .matches(/^[0-9]+$/, "Only numeric values allowed")
     .required("Phone is required"),
+    terms: Yup.boolean()
+    .oneOf([true], "You must accept privacy policy & terms")
+    .required("You must accept privacy policy & terms"),
 });

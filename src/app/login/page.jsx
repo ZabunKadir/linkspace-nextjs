@@ -1,164 +1,131 @@
 "use client";
+
 import React from "react";
+import { useRouter } from "next/navigation";
+import { useFormik } from "formik";
+import Swal from "sweetalert2";
+import { useLocale, useTranslations } from "next-intl";
 import Input from "@/components/Common/Input";
 import Button from "@/components/Common/Button";
-import { FaFacebookF, FaTwitter, FaGithub, FaGoogle } from "react-icons/fa";
-import { useFormik } from "formik";
 import { loginValidationSchema } from "./loginSchema";
-import Swal from "sweetalert2";
-import { useRegisterMutation } from "@/store/auth/service";
+import { useLoginMutation } from "@/store/auth/service";
 
-const LoginPage = () => {
-  const [register, { isLoading: registerLoading }] = useRegisterMutation();
+export default function LoginPage() {
+  const t = useTranslations("loginSection");
+  const locale = useLocale();
+  const router = useRouter();
+  const [login, { isLoading }] = useLoginMutation();
 
   const formik = useFormik({
-    enableReinitialize: true,
-    initialValues: {
-      name: "",
-      password: "",
-    },
-    validationSchema: loginValidationSchema,
-    onSubmit: (values) => {
-      delete values.confirmPassword;
-      register(values).then((res) => {
-        if (!res?.data?.error) {
-          formik.resetForm();
-          Swal.fire({
-            icon: "success",
-            title: "Registration Successful",
-            text: "Your account has been created successfully!",
-            confirmButtonColor: "#3085d6",
-          });
+    initialValues: { email: "", password: "" },
+   validationSchema: loginValidationSchema(locale),
+    onSubmit: async (values) => {
+      try {
+        const data = await login(values).unwrap();
+        if (data.twoFactorRequired) {
+          router.push(
+            `/twofactor?token=${encodeURIComponent(
+              data.sessionToken
+            )}&masked=${encodeURIComponent(data.maskedEmail)}`
+          );
         } else {
-          Swal.fire({
-            icon: "error",
-            title: "Registration Failed",
-            text: res?.data?.error || "An error occurred during registration.",
-            confirmButtonColor: "#d33",
-          });
+          router.push("/dashboard");
         }
-      });
+      } catch (err) {
+        const msg = err.data?.message || err.message || t("unknownError");
+        Swal.fire(t("loginErrorTitle"), msg, "error");
+      }
     },
   });
 
   const loginFields = [
     {
       name: "email",
-      label: "Email or Username",
-      placeholder: "Enter your email or username",
+      label: t("emailLabel"),
+      placeholder: t("emailPlaceholder"),
       type: "text",
     },
     {
       name: "password",
-      label: "Password",
-      placeholder: "Enter your password",
+      label: t("passwordLabel"),
+      placeholder: t("passwordPlaceholder"),
       type: "password",
     },
   ];
+
   return (
     <div className="flex min-h-screen text-sm overflow-x-hidden">
+      {/* Left panel */}
       <div className="w-full relative bg-[#f9f9f9] hidden lg:flex items-center justify-center">
         <img
           src="https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/illustrations/bg-shape-image-light.png"
-          alt="background-shape"
+          alt="background shape"
           className="absolute bottom-0 left-0 w-full h-auto object-cover z-0"
         />
         <img
           src="https://demos.pixinvent.com/vuexy-html-admin-template/assets/img/illustrations/auth-login-illustration-light.png"
-          alt="auth-illustration"
+          alt="login illustration"
           className="relative z-10 max-w-[420px]"
         />
       </div>
+
+      {/* Right panel */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-6">
         <form
           onSubmit={formik.handleSubmit}
-          className="w-full max-w-md space-y-4 "
+          className="w-full max-w-md space-y-4"
         >
           <div>
             <h1 className="text-xl font-semibold text-gray-800 mb-1">
-              Welcome to Linkspace! 👋
+              {t("welcome")}
             </h1>
-            <p className="text-xs text-gray-500">
-              Please log in to your account and get things back on track.
-            </p>
+            <p className="text-xs text-gray-500">{t("subtitle")}</p>
           </div>
-          {loginFields.map((field, index) => (
+
+          {loginFields.map((field) => (
             <Input
-              key={index}
+              key={field.name}
               name={field.name}
               label={field.label}
               type={field.type}
               placeholder={field.placeholder}
-              value={formik.values[field.name] || ""}
+              value={formik.values[field.name]}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              disabled={registerLoading}
+              disabled={isLoading}
               className="text-sm px-3 py-2"
               error={
                 formik.touched[field.name] && formik.errors[field.name]
-                  ? formik.errors[field.name]
-                  : null
               }
             />
           ))}
 
-          {/* Remember me + Forgot */}
           <div className="flex justify-between items-center text-xs text-gray-600">
             <label className="flex items-center gap-2">
-              <input type="checkbox" className="form-checkbox" />
-              Remember Me
+              <input type="checkbox" className="form-checkbox" />{" "}
+              {t("rememberMe")}
             </label>
             <a href="#" className="text-blue-500 hover:underline">
-              Forgot Password?
+              {t("forgotPassword")}
             </a>
           </div>
 
-          <Button className="w-full bg-indigo-600 text-white py-2.5 hover:bg-indigo-700">
-            Sign in
+          <Button
+            type="submit"
+            disabled={isLoading}
+            className="w-full bg-indigo-600 text-white py-2.5 hover:bg-indigo-700"
+          >
+            {isLoading ? t("signingIn") : t("signIn")}
           </Button>
 
           <p className="text-center text-xs text-gray-600 font-bold">
-            New on our platform?{" "}
+            {t("newHere")}{" "}
             <a href="/register" className="text-blue-600 font-medium">
-              Create an account
+              {t("signUp")}
             </a>
           </p>
-
-          <div className="flex items-center justify-center gap-4 py-2 text-gray-400 text-xs">
-            <div className="h-px w-full bg-gray-300" />
-            or
-            <div className="h-px w-full bg-gray-300" />
-          </div>
-          <div className="flex items-center justify-center space-x-3 pt-3 text-gray-500">
-            <a
-              href="#"
-              className="p-2 rounded-full hover:bg-gray-100 transition"
-            >
-              <FaFacebookF className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              className="p-2 rounded-full hover:bg-gray-100 transition"
-            >
-              <FaTwitter className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              className="p-2 rounded-full hover:bg-gray-100 transition"
-            >
-              <FaGithub className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              className="p-2 rounded-full hover:bg-gray-100 transition"
-            >
-              <FaGoogle className="w-5 h-5" />
-            </a>
-          </div>
         </form>
       </div>
     </div>
   );
-};
-
-export default LoginPage;
+}

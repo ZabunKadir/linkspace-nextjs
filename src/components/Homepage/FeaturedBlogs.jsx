@@ -1,75 +1,56 @@
-// src/components/Homepage/FeaturedBlogs.jsx
-import { dummyBlogs } from "@/data/blogs";
-import BlogCard from "./BlogCard";
-import Button from "../Common/Button";
-import Title from "../Common/Title";
-import { motion } from "framer-motion";
+import Link from "next/link"
+import Button from "../Common/Button"
+import Title from "../Common/Title"
+import { dummyBlogs } from "@/data/blogs"
 
-// Motion variants
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
-export default function FeaturedBlogs({ count = 3 }) {
-  const featured = dummyBlogs.slice(0, count);
+export default function FeaturedBlogs() {
+  const blog = dummyBlogs[0]
 
   return (
-    <section className="py-12">
-      <div className="container mx-auto max-w-7xl px-4">
+    <section className="w-full bg-gray-100 py-12">
+      {/* İçerik konteyneri */}
+      <div className="mx-auto max-w-7xl px-6">
+        {/* Başlık */}
         <Title
-          level={3}
-          children="Our Featured Blogs"
-          align="start"
-          size="text-lg md:text-5xl"
+          children="LinkSpace Blogs"
+          level={1}
+          size="text-4xl md:text-5xl"
           weight="bold"
-          color="text-black"
-          className="uppercase"
+          color="text-blue-500"
+          className="mb-8 text-left"
         />
 
-        {/* Animated grid container with equal-height items */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 items-stretch"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          {featured.map((blog) => (
-            <motion.div
-              key={blog.slug}
-              variants={itemVariants}
-              className="h-full min-h-[450px]"
-            >
-              <BlogCard
-                slug={blog.slug}
-                image={blog.image}
-                title={blog.title}
-                summary={blog.summary}
-                date={blog.date}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* İki kolonlu düzen */}
+        <div className="grid md:grid-cols-2 items-center gap-8">
+          {/* Sol: Resim */}
+          <div className="w-full">
+            <img
+              src={blog.image || "/placeholder.svg"}
+              alt={blog.title}
+              className="w-full h-auto rounded-2xl object-cover"
+            />
+          </div>
 
-        <div className="mt-8 text-center">
-          <Button
-            size="md"
-            variant="primary"
-            children="View All Blogs"
-            className="px-6 py-2"
-          />
+          {/* Sağ: İçerik */}
+          <div className="w-full">
+            <h3 className="text-lg font-bold text-gray-900 mb-2">
+              En Son Çıkanlar
+            </h3>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              {blog.title}
+            </h2>
+            <p className="text-sm text-gray-400 mb-6">{blog.date}</p>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              {blog.summary}
+            </p>
+            <Link href={`/blog/${blog.slug}`}>
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium">
+                Hemen Oku
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
