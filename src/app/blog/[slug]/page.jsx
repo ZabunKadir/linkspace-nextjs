@@ -2,7 +2,7 @@
 "use client";
 import BlogBreadcrumb from "@/components/Common/BlogBreadcrumb";
 import BlogSidebarCard from "@/components/Common/BlogSidebarCard";
-import BlogSlider from "@/components/Homepage/BlogSlider";
+import BlogSlider from "@/app/Homepage/BlogSlider";
 import { dummyBlogs } from "@/data/blogs";
 import { useParams } from "next/navigation";
 

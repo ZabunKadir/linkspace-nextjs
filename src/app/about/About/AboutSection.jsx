@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import MessagesHeader from "../Common/MessagesHeader";
+import MessagesHeader from "../../../components/Common/MessagesHeader";
 
 const containerVariants = {
   hidden: {},

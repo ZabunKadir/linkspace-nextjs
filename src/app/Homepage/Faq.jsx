@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import CustomFaq from "../Common/Faq";
+import CustomFaq from "../../components/Common/Faq";
 import { useTranslations } from "next-intl";
 
 export default function FaqHomePage() {

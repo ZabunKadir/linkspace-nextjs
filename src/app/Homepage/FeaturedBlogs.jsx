@@ -1,6 +1,6 @@
 import Link from "next/link"
-import Button from "../Common/Button"
-import Title from "../Common/Title"
+import Button from "../../components/Common/Button"
+import Title from "../../components/Common/Title"
 import { dummyBlogs } from "@/data/blogs"
 
 export default function FeaturedBlogs() {
