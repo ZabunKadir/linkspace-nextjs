@@ -1,9 +1,13 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Accordion, AccordionItem, AccordionTrigger } from "@/components/Common/Acardion"
-import { motion, AnimatePresence } from "framer-motion"
-import { MdAdd, MdRemove } from "react-icons/md"
+import { useState } from "react";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/Common/Acardion";
+import { motion, AnimatePresence } from "framer-motion";
+import { MdAdd, MdRemove } from "react-icons/md";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -14,7 +18,7 @@ const containerVariants = {
       delayChildren: 0.3,
     },
   },
-}
+};
 
 const itemVariants = {
   hidden: { opacity: 0, y: 40, scale: 0.9 },
@@ -24,20 +28,20 @@ const itemVariants = {
     scale: 1,
     transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
   },
-}
+};
 
 const collapseVariants = {
   collapsed: { height: 0, opacity: 0, paddingTop: 0, paddingBottom: 0 },
-  expanded: { height: "auto", opacity: 1, paddingTop: 24, paddingBottom: 24 },
-}
+  expanded: { height: "auto", opacity: 1 },
+};
 
 const iconVariants = {
   closed: { rotate: 0, scale: 1 },
   open: { rotate: 180, scale: 1.15 },
-}
+};
 
 const FaqItems = ({ items }) => {
-  const [openItems, setOpenItems] = useState([])
+  const [openItems, setOpenItems] = useState([]);
 
   return (
     <div className="relative bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/40 px-4 py-16">
@@ -57,10 +61,13 @@ const FaqItems = ({ items }) => {
           initial={{ scale: 0, rotate: -5 }}
           whileInView={{ scale: 1, rotate: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2, type: "spring", stiffness: 150, damping: 12 }}
-        >
-     
-        </motion.div>
+          transition={{
+            delay: 0.2,
+            type: "spring",
+            stiffness: 150,
+            damping: 12,
+          }}
+        ></motion.div>
 
         <motion.h2
           className="text-5xl md:text-7xl  font-black mb-8 leading-none"
@@ -101,10 +108,15 @@ const FaqItems = ({ items }) => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
       >
-        <Accordion type="multiple" value={openItems} onValueChange={setOpenItems} className="w-full space-y-4">
+        <Accordion
+          type="multiple"
+          value={openItems}
+          onValueChange={setOpenItems}
+          className="w-full space-y-4"
+        >
           {items.map((item, index) => {
-            const val = `item-${index}`
-            const isOpen = openItems.includes(val)
+            const val = `item-${index}`;
+            const isOpen = openItems.includes(val);
 
             return (
               <motion.div
@@ -136,11 +148,14 @@ const FaqItems = ({ items }) => {
                             whileHover={{
                               scale: 1.1,
                               rotate: 5,
-                              boxShadow: "0 20px 40px -12px rgb(59 130 246 / 0.5)",
+                              boxShadow:
+                                "0 20px 40px -12px rgb(59 130 246 / 0.5)",
                             }}
                             transition={{ type: "spring", stiffness: 300 }}
                           >
-                            <span className="text-lg">{String(index + 1).padStart(2, "0")}</span>
+                            <span className="text-lg">
+                              {String(index + 1).padStart(2, "0")}
+                            </span>
                           </motion.div>
 
                           <div className="flex-1">
@@ -149,8 +164,6 @@ const FaqItems = ({ items }) => {
                             </span>
                           </div>
                         </div>
-
-                 
                       </div>
                     </AccordionTrigger>
 
@@ -162,7 +175,10 @@ const FaqItems = ({ items }) => {
                           initial="collapsed"
                           animate="expanded"
                           exit="collapsed"
-                          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                          transition={{
+                            duration: 0.5,
+                            ease: [0.16, 1, 0.3, 1],
+                          }}
                           className="overflow-hidden"
                         >
                           <div className="px-8 pb-8">
@@ -192,12 +208,12 @@ const FaqItems = ({ items }) => {
                   </div>
                 </AccordionItem>
               </motion.div>
-            )
+            );
           })}
         </Accordion>
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
-export default FaqItems
+export default FaqItems;

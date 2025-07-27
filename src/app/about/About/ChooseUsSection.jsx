@@ -1,6 +1,6 @@
 "use client"
 
-import Title from "../Common/Title"
+import Title from "../../../components/Common/Title"
 import { motion } from "framer-motion"
 import dynamic from "next/dynamic"
 import { useTranslations } from "next-intl"

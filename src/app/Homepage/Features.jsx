@@ -6,7 +6,7 @@ import { MdOutlineTrendingUp } from "react-icons/md"
 import { HiSparkles, HiTrendingUp } from "react-icons/hi"
 import { motion } from "framer-motion"
 import { useTranslations } from "next-intl"
-import Counter from "../Common/Counter"
+import Counter from "../../components/Common/Counter"
 
 export default function EnhancedFeature() {
   const t = useTranslations("featureSection")

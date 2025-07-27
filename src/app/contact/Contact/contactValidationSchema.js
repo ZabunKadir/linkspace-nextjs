@@ -1,7 +1,7 @@
 // src/components/Contact/contactValidationSchema.js
 import * as yup from "yup";
-import en from "../../../messages/en.json";
-import tr from "../../../messages/tr.json";
+import en from "../../../../messages/en.json";
+import tr from "../../../../messages/tr.json";
 
 /**
  * @param {"en"|"tr"} locale
