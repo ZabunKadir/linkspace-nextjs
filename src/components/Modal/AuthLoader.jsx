@@ -7,9 +7,9 @@ import { loadStoredAuth } from "@/store/auth/slice";
 export default function AuthLoader() {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(loadStoredAuth());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(loadStoredAuth());
+  // }, [dispatch]);
 
   return null;
 }

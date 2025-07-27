@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { FiChevronDown } from "react-icons/fi";
 export default function ProfileDropdown() {
@@ -50,8 +51,7 @@ export default function ProfileDropdown() {
               </div>
             </div>
             <button className="mt-3 w-full text-center text-sm text-blue-600 border border-blue-600 rounded-full py-1 hover:bg-blue-50">
-              
-              <a href="/dashboard/profile">Profili Görüntüleyin</a>
+              <Link href="/profile">Profili Görüntüleyin</Link>
             </button>
           </div>
           <div className="py-2 text-sm text-gray-700">

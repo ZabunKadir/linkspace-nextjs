@@ -8,13 +8,6 @@ export const authApi = api.injectEndpoints({
         method: "POST",
         body: credentials,
       }),
-      transformResponse: (response) => {
-       return{
-        token:response.accessToken,
-        refreshToken: response.refreshToken,
-        user:null,
-       }
-      },
     }),
     register: build.mutation({
       query: (data) => ({

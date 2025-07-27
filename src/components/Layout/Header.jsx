@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { HiMenu, HiX, HiSparkles } from "react-icons/hi";
@@ -49,20 +49,23 @@ export default function EnhancedHeaderTailwind() {
     }`;
   };
 
-  const navItems = [
-    { href: "/", label: t("home"), icon: <FaHome className="w-4 h-4" /> },
-    {
-      href: "/about",
-      label: t("about"),
-      icon: <FaInfoCircle className="w-4 h-4" />,
-    },
-    { href: "/blog", label: t("blog"), icon: <FaBlog className="w-4 h-4" /> },
-    {
-      href: "/contact",
-      label: t("contact"),
-      icon: <FaEnvelope className="w-4 h-4" />,
-    },
-  ];
+  const navItems = useMemo(
+    () => [
+      { href: "/", label: t("home"), icon: <FaHome className="w-4 h-4" /> },
+      {
+        href: "/about",
+        label: t("about"),
+        icon: <FaInfoCircle className="w-4 h-4" />,
+      },
+      { href: "/blog", label: t("blog"), icon: <FaBlog className="w-4 h-4" /> },
+      {
+        href: "/contact",
+        label: t("contact"),
+        icon: <FaEnvelope className="w-4 h-4" />,
+      },
+    ],
+    []
+  );
 
   return (
     <header

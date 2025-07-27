@@ -29,15 +29,17 @@ export const authSlice = createSlice({
     build.addMatcher(
       authApi.endpoints.login.matchFulfilled, // Login başarılı olunca tetiklenir
       (state, { payload }) => {
-        // payload backend'den gelen veri (ör. { user, token })
-        state.user = payload.user;
-        state.token = payload.token;
+        console.log("payload", payload);
 
-        // Tarayıcıda sakla (Remember Me veya oturum koruma için)
-        if (typeof window !== "undefined") {
-          localStorage.setItem("token", payload.token);
-          localStorage.setItem("user", JSON.stringify(payload.user));
-        }
+        // // payload backend'den gelen veri (ör. { user, token })
+        // state.user = payload.user;
+        // state.token = payload.token;
+
+        // // Tarayıcıda sakla (Remember Me veya oturum koruma için)
+        // if (typeof window !== "undefined") {
+        //   localStorage.setItem("token", payload.token);
+        //   localStorage.setItem("user", JSON.stringify(payload.user));
+        // }
       }
     );
   },

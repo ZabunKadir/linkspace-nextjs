@@ -1,11 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-import Footer from "@/components/Layout/Footer";
 import Providers from "@/components/Layout/Provider";
 import { NextIntlClientProvider } from "next-intl";
-import AuthLoader from "@/components/Modal/AuthLoader";
-import ConditionalWrapper from "@/components/Layout/ConditionalWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,11 +23,7 @@ export default function RootLayout({ children }) {
     <html lang="tr">
       <body className={`${geistSans.variable} ${geistMono.variable} bg-white`}>
         <NextIntlClientProvider locale="tr">
-          <Providers>
-            <AuthLoader />
-            <ConditionalWrapper>{children}</ConditionalWrapper>
-            <AuthLoader />
-          </Providers>
+          <Providers>{children}</Providers>
         </NextIntlClientProvider>
       </body>
     </html>
