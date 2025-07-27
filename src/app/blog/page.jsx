@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { dummyBlogs } from "@/data/blogs";
-import BlogSlider from "@/components/Homepage/BlogSlider";
+import BlogSlider from "@/app/Homepage/BlogSlider";
 import Title from "@/components/Common/Title";
-import FeaturedBlogs from "@/components/Homepage/FeaturedBlogs";
+import FeaturedBlogs from "@/app/Homepage/FeaturedBlogs";
 
 const BlogPage = () => {
   const [searchTerm, setSearchTerm] = useState("");

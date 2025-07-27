@@ -1,7 +1,7 @@
-import AboutSection from "@/components/About/AboutSection";
-import ChooseUsSection from "@/components/About/ChooseUsSection";
-import StatsSection from "@/components/About/StatsSection";
-import TeamSection from "@/components/About/TeamSection";
+import AboutSection from "@/app/about/About/AboutSection";
+import ChooseUsSection from "@/app/about/About/ChooseUsSection";
+import StatsSection from "@/app/about/About/StatsSection";
+import TeamSection from "@/app/about/About/TeamSection";
 
 export default function AboutPage() {
   return <div  >

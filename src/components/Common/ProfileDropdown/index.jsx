@@ -20,16 +20,15 @@ export default function ProfileDropdown() {
     <div className="relative inline-block text-left" ref={dropdownRef}>
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center space-x-2 hover:bg-gray-100 px-3 py-2 rounded"
+        className="flex items-center  hover:bg-gray-100  rounded"
       >
         <img
           src="https://www.fotoipek.com.tr/wp-content/uploads/2021/04/biyometrikk.jpg"
           alt="Profil"
-          width={32}
-          height={32}
-          className="rounded-full"
+          width={24}
+          height={24}
+          className="rounded-full object-cover"
         />
-        <span className="text-sm font-medium">Ben</span>
         <FiChevronDown className="w-4 h-4 text-gray-600" />
       </button>
       {open && (
@@ -51,7 +50,8 @@ export default function ProfileDropdown() {
               </div>
             </div>
             <button className="mt-3 w-full text-center text-sm text-blue-600 border border-blue-600 rounded-full py-1 hover:bg-blue-50">
-              Profili Görüntüleyin
+              
+              <a href="/dashboard/profile">Profili Görüntüleyin</a>
             </button>
           </div>
           <div className="py-2 text-sm text-gray-700">

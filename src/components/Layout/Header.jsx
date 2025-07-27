@@ -12,7 +12,6 @@ import {
   FaBlog,
   FaEnvelope,
 } from "react-icons/fa";
-import { MdLanguage } from "react-icons/md";
 import Button from "../Common/Button";
 import { motion, AnimatePresence } from "framer-motion";
 import LanguageSwitcher from "../Common/Language";
@@ -177,14 +176,15 @@ export default function EnhancedHeaderTailwind() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 z-40"
+            className="fixed inset-0 z-40 "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
+            {/* Koyu arka plan */}
             <motion.div
-              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/70" // daha koyu arka plan
               onClick={toggleMenu}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -192,14 +192,14 @@ export default function EnhancedHeaderTailwind() {
             />
 
             <motion.div
-              className="absolute right-0 top-0 h-full w-80 bg-white/95 backdrop-blur-xl shadow-2xl border-l border-white/20"
-              initial={{ x: "100%" }}
+              className="absolute inset-0 z-50 flex flex-col h-screen bg-white shadow-2xl border-l border-white/20"
+              initial={{ x: "-100%" }}
               animate={{ x: 0 }}
-              exit={{ x: "100%" }}
+              exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="p-6 h-full flex flex-col">
+              <div className="p-6 flex flex-col h-full ">
                 <div className="flex justify-between items-center mb-8">
                   <Link
                     href="/"
@@ -259,55 +259,45 @@ export default function EnhancedHeaderTailwind() {
                       </motion.div>
                     );
                   })}
-                </nav>
-
-                <motion.div
-                  className="mb-6 p-3 bg-gradient-to-r from-gray-50 to-indigo-50 rounded-xl border border-gray-100 hover:shadow-md transition-all duration-300"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  <div className="flex items-center gap-3 mb-2">
-                    <MdLanguage className="w-5 h-5 text-indigo-500 animate-pulse" />
-                    <span className="text-sm font-medium text-gray-700">
-                      Language
-                    </span>
-                  </div>
                   <LanguageSwitcher />
-                </motion.div>
 
-                <motion.div
-                  className="space-y-3"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <Link href="/login" onClick={toggleMenu} className="block">
-                    <Button
-                      variant="outline"
-                      className={`${btnClass(
-                        "/login"
-                      )} w-full justify-center border-2 border-gray-200 hover:border-indigo-300 hover:shadow-lg hover:scale-105 transition-all duration-300 bg-white/50 backdrop-blur-sm group`}
+                  <motion.div
+                    className="space-y-3 mt-auto"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    <Link href="/login" onClick={toggleMenu} className="block">
+                      <Button
+                        variant="outline"
+                        className={`${btnClass(
+                          "/login"
+                        )}  w-full justify-center bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-indigo-500/25 group`}
+                      >
+                        <span className="flex items-center gap-2">
+                          <FaUser className="w-4 h-4 group-hover:animate-bounce" />
+                          {t("login")}
+                        </span>
+                      </Button>
+                    </Link>
+                    <Link
+                      href="/register"
+                      onClick={toggleMenu}
+                      className="block"
                     >
-                      <span className="flex items-center gap-2">
-                        <FaUser className="w-4 h-4 group-hover:animate-bounce" />
-                        {t("login")}
-                      </span>
-                    </Button>
-                  </Link>
-                  <Link href="/register" onClick={toggleMenu} className="block">
-                    <Button
-                      className={`${btnClass(
-                        "/register"
-                      )} w-full justify-center bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-indigo-500/25 group`}
-                    >
-                      <span className="flex items-center gap-2">
-                        <FaUserPlus className="w-4 h-4 group-hover:animate-spin" />
-                        {t("signup")}
-                      </span>
-                    </Button>
-                  </Link>
-                </motion.div>
+                      <Button
+                        className={`${btnClass(
+                          "/register"
+                        )} w-full justify-center bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-indigo-500/25 group`}
+                      >
+                        <span className="flex items-center gap-2">
+                          <FaUserPlus className="w-4 h-4 group-hover:animate-spin" />
+                          {t("signup")}
+                        </span>
+                      </Button>
+                    </Link>
+                  </motion.div>
+                </nav>
               </div>
             </motion.div>
           </motion.div>

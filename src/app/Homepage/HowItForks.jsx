@@ -2,8 +2,8 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Button from "../Common/Button";
-import Title from "../Common/Title";
+import Button from "../../components/Common/Button";
+import Title from "../../components/Common/Title";
 import { useTranslations } from "next-intl";
 import { FaArrowRight, FaCheck } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi";

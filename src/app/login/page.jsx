@@ -16,27 +16,27 @@ export default function LoginPage() {
   const router = useRouter();
   const [login, { isLoading }] = useLoginMutation();
 
-  const formik = useFormik({
-    initialValues: { email: "", password: "" },
-   validationSchema: loginValidationSchema(locale),
-    onSubmit: async (values) => {
-      try {
-        const data = await login(values).unwrap();
-        if (data.twoFactorRequired) {
-          router.push(
-            `/twofactor?token=${encodeURIComponent(
-              data.sessionToken
-            )}&masked=${encodeURIComponent(data.maskedEmail)}`
-          );
-        } else {
-          router.push("/dashboard");
-        }
-      } catch (err) {
-        const msg = err.data?.message || err.message || t("unknownError");
-        Swal.fire(t("loginErrorTitle"), msg, "error");
-      }
-    },
-  });
+const formik = useFormik({
+  initialValues: { email: "", password: "" },
+  validationSchema: loginValidationSchema(locale),
+ onSubmit: async (values) => {
+  try {
+    const data = await login(values).unwrap();
+    console.log("Login response:", data);  // BURAYA BAK
+    if (data.twoFactorRequired) {
+      router.push(`/twofactor?token=${encodeURIComponent(data.sessionToken)}&masked=${encodeURIComponent(data.maskedEmail)}`);
+    } else {
+      router.push("/dashboard");
+    }
+  } catch (err) {
+    console.error("Login error:", err);
+    const msg = err.data?.message || err.message || t("unknownError");
+    Swal.fire(t("loginErrorTitle"), msg, "error");
+  }
+},
+
+});
+
 
   const loginFields = [
     {

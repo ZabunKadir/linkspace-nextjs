@@ -8,6 +8,13 @@ export const authApi = api.injectEndpoints({
         method: "POST",
         body: credentials,
       }),
+      transformResponse: (response) => {
+       return{
+        token:response.accessToken,
+        refreshToken: response.refreshToken,
+        user:null,
+       }
+      },
     }),
     register: build.mutation({
       query: (data) => ({
@@ -42,5 +49,5 @@ export const {
   useLoginMutation,
   useRegisterMutation,
   useForgotPasswordMutation,
-  useVerifyTfaMutation
+  useVerifyTfaMutation,
 } = authApi;

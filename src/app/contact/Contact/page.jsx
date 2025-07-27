@@ -5,9 +5,10 @@ import { useState, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import contactValidationSchema from "./contactValidationSchema";
 import { motion } from "framer-motion";
-import Button from "../Common/Button";
-import Title from "../Common/Title";
+
 import { useTranslations, useLocale } from "next-intl";
+import Button from "@/components/Common/Button";
+import Title from "@/components/Common/Title";
 
 const ContactFormFormik = ({ onStatusChange }) => {
   const t = useTranslations("contactSectionForm");

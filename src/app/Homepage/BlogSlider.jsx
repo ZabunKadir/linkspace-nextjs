@@ -7,7 +7,7 @@ import { Navigation } from "swiper/modules";
 import Link from "next/link";
 import { dummyBlogs } from "@/data/blogs";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-import Title from "../Common/Title";
+import Title from "../../components/Common/Title";
 
 export default function BlogSlider() {
   return (
