@@ -56,7 +56,6 @@ export default function EnhancedAboutSection() {
             />
           </div>
         </motion.div>
-        <MessagesHeader />
         <motion.div
           className="w-full md:w-1/2 space-y-8"
           variants={itemVariants}
