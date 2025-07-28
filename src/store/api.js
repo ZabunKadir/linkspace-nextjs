@@ -17,7 +17,12 @@ export const baseQueryWithRefresh = async (args, api, extraOptions) => {
 
     // Refresh endpoint çağır
     const refreshResult = await baseQuery(
-      { url: "/auth/refresh", method: "POST" },
+      {
+        url: "/auth/refresh",
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: {},
+      },
       api,
       extraOptions
     );
