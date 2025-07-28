@@ -11,7 +11,7 @@ export default function DashboardLayout({ children }) {
   }
   return (
     <div>
-      <AuthLayout children={children} />
+      <AuthLayout>{children}</AuthLayout>
       <MessagesWidget />
     </div>
   );

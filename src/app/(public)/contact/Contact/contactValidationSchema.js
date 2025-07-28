@@ -1,16 +1,14 @@
 // src/components/Contact/contactValidationSchema.js
 import * as yup from "yup";
-import en from "../../../../messages/en.json";
-import tr from "../../../../messages/tr.json";
+
+import en from "../../../../../messages/en.json";
+import tr from "../../../../../messages/tr.json";
 
 /**
  * @param {"en"|"tr"} locale
  */
 const contactValidationSchema = (locale) => {
-  const msgs =
-    locale === "tr"
-      ? tr.contactSectionForm
-      : en.contactSectionForm;
+  const msgs = locale === "tr" ? tr.contactSectionForm : en.contactSectionForm;
 
   return yup.object().shape({
     name: yup
@@ -21,10 +19,7 @@ const contactValidationSchema = (locale) => {
       .string()
       .required(msgs.lastNameRequired)
       .max(50, msgs.lastNameMax),
-    email: yup
-      .string()
-      .email(msgs.emailInvalid)
-      .required(msgs.emailRequired),
+    email: yup.string().email(msgs.emailInvalid).required(msgs.emailRequired),
     message: yup
       .string()
       .required(msgs.messageRequired)
